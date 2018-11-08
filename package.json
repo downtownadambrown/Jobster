@@ -1,0 +1,19 @@
+{
+  "name": "jobster",
+  "version": "1.0.0",
+  "description": "Job/Applicant matching system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Pamela Anderson, Ann Tuck, Adam Brown, Ki Kim",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "path": "^0.12.7",
+    "sequelize": "^4.41.1"
+  }
+}
