@@ -3,20 +3,28 @@ html, body {
     width: 100%;
 }
 
-#header {
-    background-color: black;
-}
-
-.black-opacity {
-    background-color: rgba(0, 0, 0, 0.6);
+body {
+    background-color: rgb(124, 0, 0, 0.9);
 }
 
 #navContainer {
-    height: 80px;
+    height: 64px;
 }
 
 #main {
     height: 100%;
-    background: url('/public/assets/images/jobster.svg');
-    height: 1100px;
+/*     background: url('/public/assets/images/jobster.svg'); */
+    height: 600px;
+
+    margin-top: 96px;
 }
+
+.black-opacity{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+a {
+    color: white;
+    margin-left: 15px;
+}
+
