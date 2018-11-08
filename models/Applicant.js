@@ -39,7 +39,7 @@ module.exports = function(connection, Sequelize) {
             }
         },
 
-        image_url: {
+        image: {
             type: Sequelize.STRING,
             allowNull: true,
             // validate: {
@@ -63,21 +63,37 @@ module.exports = function(connection, Sequelize) {
             }
         },
 
-        // keywords: {
-        //     type: Sequelize.ARRAY,
-        //     allowNull: true,
-        //     validate: {
-        //         notEmpty:true
-        //     }
-        // },
+        keywords1: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
 
-        // recentEmployment: {
-        //     type: Sequelize.ARRAY,
-        //     allowNull: true,
-        //     validate: {
-        //         notEmpty:true
-        //     }
-        // },
+        keywords2: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        keywords3: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        recentEmployment: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
 
         linkedIn: {
             type: Sequelize.STRING,
@@ -111,13 +127,13 @@ module.exports = function(connection, Sequelize) {
             }
         },   
 
-        // jobDesired: {
-        //     type: Sequelize.ARRAY,
-        //     allowNull: false,
-        //     validate: {
-        //         notEmpty:true
-        //     }
-        // },  
+        jobDesired: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty:true
+            }
+        },  
 
         salary: {
             type: Sequelize.FLOAT,
@@ -131,17 +147,6 @@ module.exports = function(connection, Sequelize) {
 
     });
 
-    
-// Product.associate = function(models) {
-//     //Product is a child of Department, the tables are connected by id (Department id)
-//     Product.belongsTo(models.Department, {
-//         foreignKey: {
-//             allowNull: false
-//         },
-//         //Commented out for now.
-//         //Will delete all products in a department if the department is deleted.
-//         //onDelete: 'cascade'
-//     });
-// };
+
     return Applicant;
 };
