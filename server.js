@@ -26,13 +26,11 @@ const db = require('./models');
 //Routes
     
     // require('./routes/manager-api-routes.js')(app);
-    // require('./routes/job-api-routes.js')(app);
-    // require('./routes/applicant-api-routes.js')(app);
+    //require('./routes/job-api-routes.js')(app);
+    //require('./routes/applicant-api-routes.js')(app);
     
-    // require('./routes/html-routes.js')(app);
-
-
-    
+    require('./routes/html-routes')(app);
+        
 //Sync our sequelize models then start our Express app, listen to PORT
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
