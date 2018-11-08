@@ -38,13 +38,30 @@ module.exports = function(connection, Sequelize) {
             }
         },
 
-        // responsibilities: {
-        //     type: Sequelize.ARRAY,
-        //     allowNull: true,
-        //     validate: {
-        //         notEmpty:true
-        //     }
-        // },
+        responsibilities1: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        responsibilities2: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        responsibilities3: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
 
         hours: {
             type: Sequelize.STRING,
@@ -63,14 +80,29 @@ module.exports = function(connection, Sequelize) {
         },
 
         
+        keyword1: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
 
-        // keywords: {
-        //     type: Sequelize.ARRAY,
-        //     allowNull: true,
-        //     validate: {
-        //         notEmpty:true
-        //     }
-        // },
+        keyword2: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        keyword3: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
 
         website: {
             type: Sequelize.STRING,
