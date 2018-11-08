@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#header {
+    background-color: black;
+}
+
+.black-opacity {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#navContainer {
+    height: 80px;
+}
+
+#main {
+    height: 100%;
+    background: url('/public/assets/images/jobster.svg');
+    height: 1100px;
+}
