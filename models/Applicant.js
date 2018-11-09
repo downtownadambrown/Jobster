@@ -6,7 +6,7 @@ module.exports = function (connection, Sequelize) {
     var Applicant = connection.define('Applicant', {
 
         //Define field names in table Applicant
-        applicant_firstName: {
+        firstName: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
@@ -14,7 +14,7 @@ module.exports = function (connection, Sequelize) {
             }
         },
 
-        applicant_lastName: {
+        lastName: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
@@ -112,6 +112,9 @@ module.exports = function (connection, Sequelize) {
 
     });
 
+    Applicant.associate = function(models) {
+        Applicant.hasMany(models.Message);
+    };
 
     return Applicant;
 };

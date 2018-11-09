@@ -28,3 +28,17 @@ a {
     margin-left: 15px;
 }
 
+#register-modal {
+    margin-top: 80px;
+    font-size: 14px;
+}
+
+.modal-break{
+    border-bottom: 1px black solid;
+    width: 100%;
+    
+}
+
+#app-title {
+    width: 200px;
+}
