@@ -8,6 +8,7 @@
     <title>Jobster</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -16,7 +17,7 @@
         <nav class="navbar navbar-expand-lg black-opacity fixed-top justify-content-center">
             <div class="container" id="navContainer">
                 <a class="navbar-brand" href="#">Revolutionizing how we hire people</a>
-                <div class="navbar-nav">
+                <div class="navbar-nav d-flex flex-row" id="nav-links">
                     <a class="nav-item nav-link active" href="#">About Us<span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Features</a>
                     <a class="nav-item nav-link" href="#">|</a>
@@ -27,103 +28,48 @@
         </nav>
 
         <div class="row">
-<<<<<<< HEAD
-            <div class="col" id="main">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie ex a lorem semper, in
-                interdum orci mattis. Nunc ipsum purus, commodo consequat molestie in, placerat non magna. Praesent id
-                justo libero. Morbi volutpat eros nec lectus laoreet, nec blandit justo accumsan. Nam sed mauris nec
-                orci efficitur mollis ac ac nunc. Nam laoreet orci non urna finibus, a pretium erat volutpat. Donec
-                volutpat nunc a vulputate elementum. Fusce pulvinar lectus ligula, eu elementum metus rutrum eu. In
-                ornare mollis sapien, eu pretium eros dapibus sit amet. Praesent arcu lacus, congue eu orci et,
-                hendrerit vestibulum sem. Aliquam cursus tempor facilisis. Nunc vel urna sit amet augue viverra
-                tristique. Duis ac suscipit enim. Morbi a sapien in sem placerat commodo non vehicula quam.
-
-                Suspendisse quis ipsum non nisi lobortis auctor. Donec est quam, molestie non justo eget, ornare
-                accumsan sem. Duis vel nibh dignissim, tristique libero vitae, malesuada metus. Donec semper justo
-                quam, non mattis lorem gravida et. Suspendisse eu porttitor urna. Nunc eget egestas nulla. Suspendisse
-                in metus ornare, ultrices justo at, faucibus felis. Duis pretium felis at mauris dignissim accumsan.
-                Suspendisse quis volutpat sapien, laoreet gravida purus. Maecenas pulvinar neque sit amet viverra
-                commodo. Cras aliquam magna nisi, in pulvinar nulla placerat id. Etiam sed tempor massa, ut consequat
-                tortor. Phasellus dapibus eros vel tempor elementum.
-
-                Suspendisse mollis sollicitudin interdum. Sed quis metus libero. Maecenas volutpat tortor molestie elit
-                sodales feugiat. Aliquam vel ultrices mauris. Curabitur blandit sagittis aliquam. Fusce sollicitudin
-                lacinia mi id fermentum. Nunc convallis justo et fermentum ultricies. Nunc bibendum ultricies turpis,
-                ut mattis libero scelerisque convallis.
-
-                Etiam semper auctor tempus. Phasellus nunc justo, interdum vitae volutpat vitae, posuere quis tortor.
-                Vestibulum convallis odio risus, eu interdum lorem mollis dapibus. Praesent eu urna ultrices, pharetra
-                ipsum vel, vestibulum ante. Phasellus elementum eros a ex accumsan tincidunt. Vestibulum laoreet lectus
-                in ex consequat, eu bibendum turpis feugiat. Sed mollis laoreet lorem, id porttitor urna lobortis sed.
-                In auctor eros quis felis venenatis, sed gravida nibh vestibulum. Donec volutpat turpis nec tellus
-                vulputate, in pharetra velit blandit. Sed imperdiet turpis ac tempus egestas. In hac habitasse platea
-                dictumst.
-
-                In euismod massa id odio imperdiet semper. Morbi nec elit ut urna condimentum ornare. Fusce ut mollis
-                justo. Nulla bibendum justo eu tortor sodales, eu vulputate lacus viverra. Mauris a sem laoreet,
-                ultricies nunc vel, pharetra odio. Sed id velit leo. Donec fringilla viverra risus eget congue.
-
-
-=======
             <div class="col text-center text-light d-flex flex-column align-items-center justify-content-center" id="main">
                 <h1>Jobster</h1>
                 <div id="button-container">
-                    <button type="button" class="btn btn-danger m-3">Sign Up</button>
-                    <button type="button" class="btn btn-danger m-3">Login</button>
+                    <button type="button" id="sign-up-button" class="btn btn-danger m-3">Sign Up</button>
+                    <a href="#login-form" rel="modal:open"><button type="button" id="login-button" class="btn btn-danger m-3">Login</button></a>
                 </div>
->>>>>>> 6e8aa2a0d8cbf12478f84d6bf5e963b4bd6cd8da
             </div>
         </div>
         <!-- USER INPUT             -->
 
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">First Name</label>
+        <form id="modal" class="modal">
+            <div class="form-group form-inline p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">First Name</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Last Name</label>
+            <div class="form-group form-inline p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Last Name</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Last Name">
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
+            <div class="form-group form-inline p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Email address</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Phone Number</label>
-                <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="XXX XXX-XXXX">
+            <div class="form-group form-inline p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Phone Number</label>
+                <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="(    )         -">
             </div>
-
-            <div class="form-group">
-                <label for="exampleFormControlInput1">LinkedIn</label>
-                <input type="url" class="form-control" id="exampleFormControlInput1" placeholder="Url">
+            <div class="form-group p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">LinkedIn Profile URL</label>
+                <input type="url" class="form-control" id="exampleFormControlInput1" placeholder="copy + paste your LinkedIn">
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Personal Url</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Url">
+            <div class="form-group p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Personal Site (if applicable)</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Portfolio site, Github, etc..">
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Availability</label>
+            <div class="form-group form-inline p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Availability to Start</label>
                 <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="mm/dd/yyyy">
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Zipcode</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="XXXXX">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Salary/year</label>
-                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="XXXXX">
-            </div>
-
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Profile Video Url</label>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="upload_video" />
-            </form>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Job Desired</label>
+            <h6 class="modal-break">Job Preferences</h6>
+            <div class="form-group form-inline">
+                <label for="exampleFormControlSelect1" class="mr-auto">Position you are targeting</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option>Waiter</option>
                     <option>Host</option>
@@ -136,18 +82,32 @@
                     <option>Manager</option>
                     <option>Assistant</option>
                 </select>
-            </div>  
-            
+            </div>
+            <div class="form-group p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Preferred Work Zip Code</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="XXXXX">
+            </div>
+            <div class="form-group p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Hourly Rate</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="XXXXX">
+            </div>
+
+            <div class="form-group p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Profile Video Url</label>
+                <input type="file" name="upload_video" />
+            </div>
+
+            <button type="button" class="btn btn-danger">Register</button>
         </form>
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 
