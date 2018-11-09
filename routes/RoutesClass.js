@@ -114,7 +114,7 @@ class Routes {
             .catch(function(err){
                 res.json(err);
             })
-          })
+        })
     }
 
     // look for messages sent by the caller
@@ -129,7 +129,15 @@ class Routes {
 
     //post message to database, setting the caller's id as sent and target's id as received
     sendMessage() {
-        
+        this.app.post(`/api/message`, (req, res) => {
+            this.model.create(req.body)
+            .then(function(data) {
+                res.json(data);
+            })
+            .catch(function(err){
+                res.json(err);
+            })
+        })
     }
 }
 

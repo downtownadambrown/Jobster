@@ -109,7 +109,7 @@ module.exports = function (connection, Sequelize) {
                 notEmpty: true
             }
         }
-
+        
     });
 
     Applicant.associate = function(models) {

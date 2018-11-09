@@ -1,7 +1,7 @@
 //Model for the mySQL Job database
 //Defines the structure (tables) of the database
 //Manager is a parent of Job
-
+const bcrypt = require('bcryptjs');
 module.exports = function(sequelize, DataTypes) {
     const Manager = sequelize.define('Manager', {
 
