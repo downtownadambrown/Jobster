@@ -1,7 +1,6 @@
 //server.js
 //Starting point for Node/Express server.
 
-
 //Dependencies
 const express = require('express');
 const path = require('path');

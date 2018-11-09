@@ -23,5 +23,5 @@ module.exports = function(app) {
     manager.update("id");
 
     const message = new Routes("message", app, models.Message);
-    //
+    
 }

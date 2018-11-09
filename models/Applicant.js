@@ -22,7 +22,7 @@ module.exports = function(connection, Sequelize) {
             }
         },
        
-
+        /*
         applicant_email: {
             type: Sequelize.STRING,
             allowNull: false,
@@ -142,6 +142,7 @@ module.exports = function(connection, Sequelize) {
                 notEmpty: true
             }
         }
+        */
 
     });
 
