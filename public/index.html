@@ -39,6 +39,7 @@
         <!-- USER INPUT             -->
 
         <form id="modal" class="modal">
+            <h6 class="modal-break p-1 text-center">Create your profile and get hired!</h6>
             <div class="form-group form-inline p-1">
                 <label for="exampleFormControlInput1" class="mr-auto">First Name</label>
                 <input type="text" class="form-control" id="app-name-first" placeholder="First Name">
@@ -55,6 +56,11 @@
                 <label for="exampleFormControlInput1" class="mr-auto">Phone Number</label>
                 <input type="tel" class="form-control" id="app-phone" placeholder="(    )         -">
             </div>
+            <div class="form-group form-inline p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Availability to Start</label>
+                <input type="date" class="form-control" id="app-avail" placeholder="mm/dd/yyyy">
+            </div>
+            <h6 class="modal-break p-1 text-center mt-1">Help managers know you better!</h6>
             <div class="form-group p-1">
                 <label for="exampleFormControlInput1" class="mr-auto">LinkedIn Profile URL</label>
                 <input type="url" class="form-control" id="app-linkedIn" placeholder="copy + paste your LinkedIn">
@@ -64,11 +70,11 @@
                 <input type="text" class="form-control" id="app-url" placeholder="Portfolio site, Github, etc..">
             </div>
             <div class="form-group form-inline p-1">
-                <label for="exampleFormControlInput1" class="mr-auto">Availability to Start</label>
-                <input type="date" class="form-control" id="app-avail" placeholder="mm/dd/yyyy">
+                <label for="exampleFormControlInput1" class="mr-auto">Profile Video (30 sec max)</label>
+                <input type="file" name="upload_video" />
             </div>
-            <h6 class="modal-break">Job Preferences</h6>
-            <div class="form-group form-inline">
+            <h6 class="modal-break p-1 text-center mt-2">Job Preferences</h6>
+            <div class="form-group form-inline p-1">
                 <label for="exampleFormControlSelect1" class="mr-auto">Position you are targeting</label>
                 <select class="form-control" id="app-title">
                     <option>Waiter</option>
@@ -83,18 +89,13 @@
                     <option>Assistant</option>
                 </select>
             </div>
-            <div class="form-group p-1">
+            <div class="form-group form-inline p-1">
                 <label for="exampleFormControlInput1" class="mr-auto">Preferred Work Zip Code</label>
                 <input type="text" class="form-control" id="app-zip" placeholder="Zip Code">
             </div>
-            <div class="form-group p-1">
+            <div class="form-group form-inline p-1">
                 <label for="exampleFormControlInput1" class="mr-auto">Hourly Rate</label>
                 <input type="number" class="form-control" id="app-rate" placeholder="$">
-            </div>
-
-            <div class="form-group p-1">
-                <label for="exampleFormControlInput1" class="mr-auto">Profile Video Url</label>
-                <input type="file" name="upload_video" />
             </div>
 
             <button type="button" class="btn btn-danger">Register</button>
