@@ -7,16 +7,43 @@ module.exports = function(sequelize, DataTypes) {
 
         //Define fields in Manager model
         //manager_id is defined automatically as id and will be used as a foreign key for Jobs.
-        manager_firstName: DataTypes.STRING,
-        manager_lastName: DataTypes.STRING,
-        manager_email: DataTypes.STRING,
-        manager_phone: DataTypes.STRING,
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty:true
+            }
+        },
+        lastName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty:true
+            }
+        }
+        /*,
+        manager_email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty:true
+            }
+        },
+        manager_phone: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty:true
+            }
+        }
+        */
     });
 
-        Manager.associate = function(models) {
-            //Associate Manager with Job
-            Manager.hasMany(models.Job);
-        };
-    
-        return Manager;
+    Manager.associate = function(models) {
+        //Associate Manager with Job
+        Manager.hasMany(models.Job);
+        Manager.hasMany(models.Message);
+    };
+
+    return Manager;
 };
