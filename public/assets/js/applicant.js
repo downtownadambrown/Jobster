@@ -1,5 +1,9 @@
+$(function () {
+
+
+
 //*************FUNCTION appUserInput*************** */
-// retrieves applicant's input data when submint button is clicked
+// retrieves applicant's input data when submit button is clicked
 
 const appUserInput = function (event) {
         //Takes in the data from the applicant form and clears form after submit.
@@ -9,38 +13,25 @@ const appUserInput = function (event) {
         event.preventDefault();
         console.log("addUserInput");
 
-//Temporary Dummy Data
-let applicant = {
-    firstName: "Patricia",
-    lastName: "Rutabega",
-    email: "PRutabega@email.com",
-    phone: "555-666-7777",
-    linkedIn: "yada yada yada",
-    personalUrl: "asklfjldkfjldfsk",
-    availability: 05/12/2018,
-    zipcode: 30044,
-    salary: 20000,
-    video: "ksdfjlsdkfjsdflurl",
-    jobtitle: "waiter"
-};
 
 console.log("addUserInput");
 
 
-        // //Grab the form elements and fill the applicant object
-        // let applicant = {
-        //     firstName: $('#app-name-first').val().trim(),
-        //     lastName: $('#app-name-last').val().trim(),
-        //     email: $('#app-email').val().trim(),
-        //     phone: $('#app-phone').val().trim(),
-        //     linkedIn: $('#app-linkedIn').val().trim(),
-        //     personalUrl: $('#app-url').val().trim(),
-        //     availability: $('#app-avail').val().trim(),
-        //     zipcode: $('#app-zip').val().trim(),
-        //     salary: $('#app-salary').val().trim(),
-        //     video: $('#app-video').val().trim(),
-        //     jobtitle: $('#app-title').val().trim(),
-        // };
+        //Grab the form elements and fill the applicant object
+        let applicant = {
+            firstName: $('#app-name-first').val().trim(),
+            lastName: $('#app-name-last').val().trim(),
+            email: $('#app-pass').val().trim(),
+            email: $('#app-email').val().trim(),
+            phone: $('#app-phone').val().trim(),
+            linkedIn: $('#app-linkedIn').val().trim(),
+            personalUrl: $('#app-url').val().trim(),
+            availability: $('#app-avail').val().trim(),
+            zipcode: $('#app-zip').val().trim(),
+            salary: $('#app-rate').val().trim(),
+            video: $('#app-video').val().trim(),
+            jobtitle: $('#app-title').val().trim(),
+        };
 
         console.log ("applicant", applicant);
 
@@ -48,18 +39,46 @@ console.log("addUserInput");
         //Clear the input form
             $('#app-name-first').val('');
             $('#app-name-last').val('');
+            $('#app-pass').val('');
             $('#app-email').val('');
             $('#app-phone').val('');
             $('#app-linkedIn').val('');
             $('#app-url').val('');
             $('#app-avail').val('');
             $('#app-zip').val('');
-            $('#app-salary').val('');
+            $('#app-rate').val('');
             $('#app-video').val('');
             $('#app-title').val('');
 
+    postApplicant(applicant);        
 };
 
-        
 
-appUserInput();
+
+
+const postApplicant = function (data) {
+
+    console.log("postApplicant");
+
+    $.ajax({
+        method: 'POST',
+        url: ('/api/applicant'),        
+        data: data
+    }).then(function() {
+      console.log("POST");
+      });
+};
+
+
+
+
+        
+$('#app-submit').on('click', appUserInput);
+
+
+});
+
+
+
+
+
