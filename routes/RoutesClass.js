@@ -24,7 +24,7 @@ class Routes {
     // always uses id
     findID(identifier) {
         this.app.get(`/api/${this.resource}/:${identifier}`, (req, res) => {
-            this.model.findAll({
+           this.model.findAll({
                 where: {
                     [identifier]: req.params[identifier]
                 }
@@ -140,5 +140,9 @@ class Routes {
         })
     }
 }
+
+
+
+
 
 module.exports = Routes;

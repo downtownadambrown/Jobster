@@ -22,7 +22,7 @@ module.exports = function (connection, Sequelize) {
             }
         },
 
-        applicant_email: {
+        email: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
@@ -30,7 +30,7 @@ module.exports = function (connection, Sequelize) {
             }
         },
 
-        applicant_phone: {
+        phone: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
