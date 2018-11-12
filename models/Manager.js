@@ -1,15 +1,9 @@
 //Model for the mySQL Job database
 //Defines the structure (tables) of the database
 //Manager is a parent of Job
-<<<<<<< HEAD
 
 module.exports = function(connection, Sequelize) {
     const Manager = connection.define('Manager', {
-=======
-const bcrypt = require('bcryptjs');
-module.exports = function(sequelize, DataTypes) {
-    const Manager = sequelize.define('Manager', {
->>>>>>> 2ddeea6a40b5f74eb8f102ba927aa66318a7c02b
 
         //Define fields in Manager model
         //manager_id is defined automatically as id and will be used as a foreign key for Jobs.
