@@ -2,41 +2,81 @@
 //Defines the structure (tables) of the database
 //Manager is a parent of Job
 
-module.exports = function(sequelize, DataTypes) {
-    const Manager = sequelize.define('Manager', {
+module.exports = function(connection, Sequelize) {
+    const Manager = connection.define('Manager', {
 
         //Define fields in Manager model
         //manager_id is defined automatically as id and will be used as a foreign key for Jobs.
         firstName: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             validate: {
-                notEmpty:true
+                notEmpty: true
             }
         },
+
         lastName: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             validate: {
-                notEmpty:true
-            }
-        }
-        /*,
-        manager_email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notEmpty:true
+                notEmpty: true
             }
         },
-        manager_phone: {
-            type: DataTypes.STRING,
+
+        email: {
+            type: Sequelize.STRING,
             allowNull: false,
             validate: {
-                notEmpty:true
+                notEmpty: true,
+                isEmail: true
+            }
+        },
+
+        phone: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
+                isNumeric: true
+            }
+        },
+        password: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
+                isAlphanumeric: true
+            }
+        },
+        companyName: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+        companySite: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty: true,
+                isUrl: true
+            }
+        },
+        companyLinkedIn: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        companyZipcode: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty: true
             }
         }
-        */
     });
 
     Manager.associate = function(models) {

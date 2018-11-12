@@ -10,9 +10,12 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="./assets/js/manager.js"></script>
+    <script src="assets/js/login.js"></script>
 </head>
 
 <body>
+    <!--Navbar-->
     <div class="container" id="big-wrapper">
         <nav class="navbar navbar-expand-lg black-opacity fixed-top justify-content-center">
             <div class="container" id="navContainer">
@@ -36,13 +39,13 @@
                 </div>
             </div>
         </div>
-        <!-- USER INPUT             -->
-
     </div>
 
+    <!-- USER INPUT             -->
     <form id="sign-up-type-modal" class="modal">
         <div class="d-flex flex-column">
-            <button type="button" rel="modal:close" id="app-sign-up-button" class="btn btn-danger m-3">Sign up as a Job Seeker</button>
+            <button type="button" rel="modal:close" id="app-sign-up-button" class="btn btn-danger m-3">Sign up as a Job
+                Seeker</button>
             <button type="button" id="mgr-sign-up-button" class="btn btn-danger m-3">Sign up as a Hiring Manager</button>
         </div>
     </form>
@@ -106,11 +109,129 @@
             <label for="exampleFormControlInput1" class="mr-auto">Hourly Rate</label>
             <input type="number" class="form-control" id="app-rate" placeholder="$">
         </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlSelect1" class="mr-auto">Full-Time / Part-Time</label>
+            <select class="form-control" id="app-title">
+                <option>Full-Time</option>
+                <option>Part-Time</option>
+            </select>
+        </div>
         <div class="d-flex flex-row">
             <button type="button" class="btn btn-danger w-100">Register</button>
         </div>
-        
     </form>
+
+
+    <!-- Manager Input Fields-->
+    <form id="managerInput-modal" class="modal">
+        <h6 class="modal-break p-1 text-center">Create your profile to find hires!</h6>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">First Name</label>
+            <input type="text" class="form-control" id="manager-name-first" placeholder="First Name">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Last Name</label>
+            <input type="text" class="form-control" id="manager-name-last" placeholder="Last Name">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Email address</label>
+            <input type="email" class="form-control" id="manager-email" placeholder="name@example.com">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Phone Number</label>
+            <input type="tel" class="form-control" id="manager-phone" placeholder="(    )         -">
+        </div>
+        <div class="form-group">
+                <label for="exampleInputPassword1">Create a password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" id= "managerPw" placeholder="Password" Required>
+              </div>
+
+        <h6 class="modal-break p-1 text-center mt-1">Help applicants know your company!</h6>
+
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Company Name</label>
+            <input type="text" class="form-control" id="manager-company" placeholder="Company Name" required>
+        </div>
+        <div class="form-group p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Company Site</label>
+            <input type="text" class="form-control" id="manager-url" placeholder="Url">
+        </div>
+        <div class="form-group p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Company LinkedIn Profile URL</label>
+            <input type="url" class="form-control" id="manager-linkedIn" placeholder="copy + paste your company LinkedIn">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Location Zip Code</label>
+            <input type="text" class="form-control" id="manager-zip" placeholder="Zip Code">
+        </div>
+        <div class="d-flex flex-row">
+            <button type="button" class="btn btn-danger w-100" id="manager-submit">Register</button>
+        </div>
+    </form>
+
+    <!-- btn for manager to upload a job-->
+    <!-- <div class="row">
+        <div class="col text-center text-light d-flex flex-column align-items-center justify-content-center" id="main">
+            <div id="button-container">
+                <button type="button" id="job-button" class="btn btn-danger m-3">Jobs</button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Job Options Section -->
+    <!-- <form id="job-modal" class="modal">
+        <div class="d-flex flex-column">
+            <button type="button" rel="modal:close" id="add-a-job-button" class="btn btn-danger m-3">Add a Job</button>
+            <button type="button" id="edit-a-job-button" class="btn btn-danger m-3">Edit an existing job</button>
+            <button type="button" id="delete-a-job-button" class="btn btn-danger m-3">Delete an existing job</button>
+        </div>
+    </form> -->
+    <!--Adding a job: form-->
+    <!-- <form id="adding-job-modal" class="modal">
+        <h6 class="modal-break p-1 text-center">Create Your Job to Find Hires!</h6>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlSelect1" class="mr-auto" id="job-position">Position you are looking for</label>
+            <select class="form-control" id="app-title">
+                <option>Waiter</option>
+                <option>Host</option>
+                <option>Busser</option>
+                <option>Server</option>
+                <option>Cook</option>
+                <option>Line Cook</option>
+                <option>Bartender</option>
+                <option>Dishwasher</option>
+                <option>Manager</option>
+                <option>Assistant</option>
+            </select>
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto" id="job-rate">Hourly Rate</label>
+            <input type="number" class="form-control" id="app-rate" placeholder="$">
+        </div>
+        <div class="form-group fomr-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto" id="job-start">Start Date</label>
+            <input type="date" class="form-control" id="comp-start" placeholder="mm/dd/yyyy" required>
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlSelect1" class="mr-auto" id="job-hours">Full-Time / Part-Time</label>
+            <select class="form-control" id="app-title">
+                <option>Full-Time</option>
+                <option>Part-Time</option>
+            </select>
+        </div>
+
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto" id="job-zip">Location Zip Code</label>
+            <input type="text" class="form-control" id="app-zip" placeholder="Zip Code">
+        </div>
+
+        <div class="d-flex flex-row">
+            <button type="button" class="btn btn-danger w-100" id="job-submit">Register Job</button>
+        </div>
+    </form> -->
+    <!--Editing Job-->
+    <!--Deleting Job-->
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
