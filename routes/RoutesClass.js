@@ -24,7 +24,7 @@ class Routes {
     // always uses id
     findID(identifier) {
         this.app.get(`/api/${this.resource}/:${identifier}`, (req, res) => {
-            this.model.findAll({
+           this.model.findAll({
                 where: {
                     [identifier]: req.params[identifier]
                 }
@@ -114,7 +114,7 @@ class Routes {
             .catch(function(err){
                 res.json(err);
             })
-          })
+        })
     }
 
     // look for messages sent by the caller
@@ -129,8 +129,20 @@ class Routes {
 
     //post message to database, setting the caller's id as sent and target's id as received
     sendMessage() {
-        
+        this.app.post(`/api/message`, (req, res) => {
+            this.model.create(req.body)
+            .then(function(data) {
+                res.json(data);
+            })
+            .catch(function(err){
+                res.json(err);
+            })
+        })
     }
 }
+
+
+
+
 
 module.exports = Routes;

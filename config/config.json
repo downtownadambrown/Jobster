@@ -1,7 +1,11 @@
 {
     "development": {
       "username": "root",
+<<<<<<< HEAD
       "password": "password",
+=======
+      "password": "Fruit1722Cake",
+>>>>>>> 2ddeea6a40b5f74eb8f102ba927aa66318a7c02b
       "database": "jobster_db",
       "host": "127.0.0.1",
       "port": 3306,
