@@ -15,9 +15,18 @@ module.exports = function(app) {
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
+app.get('/manager-profile', function(req, res) {
+    res.sendFile(path.join(__dirname, '/../public/manager-profile.html'));
+});
+
+app.get('/app-profile', function(req, res) {
+    res.sendFile(path.join(__dirname, '/../public/app-profile.html'));
+});
 // all other files *
 app.get('*', function(req,res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));        
 });
 // Other html route if we add new page
 };
+
