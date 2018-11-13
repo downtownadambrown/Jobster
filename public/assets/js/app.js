@@ -8,7 +8,8 @@ $(document).ready(function () {
             fadeDelay: 0.80
         });
     });
-//modal for registering a applicant
+    
+    //modal for registering a applicant
     $('#app-sign-up-button').on('click', function () {
         $('#register-modal').modal({
             fadeDuration: 250,
@@ -18,7 +19,7 @@ $(document).ready(function () {
     
     //modal for registering a manager 
     $('#mgr-sign-up-button').on('click', function () {
-    $('#managerInput-modal').modal({
+    $('#manager-input-modal').modal({
         fadeDuration: 250,
         fadeDelay: 0.80
     });
