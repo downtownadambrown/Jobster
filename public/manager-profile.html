@@ -36,7 +36,7 @@
     <!-- Includes an image/Video and what was fed into the page-->
     <div class="container top-spacer" id="profile">
         <div class="row">
-            <div class="col-md-12 border">
+            <div class="col-lg-12 border">
                 <h2 class="h2-custom pt-3 pl-3"><strong class="titles">Profile</strong></h2>
             </div>
         </div>
@@ -106,34 +106,20 @@
     </div>
     
  <!--Contact Form-->
- <div class="container " id="contact" style="margin-top:30px">
-    <div class="row">
-        <div class="col-md-12 ">
-        </div>
-    </div>
 <div class="bg-faded py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 border">
-                    <h1 class=" pi-item">Contact Us</h1>
-                    <h3>
-                        Having issues with your account?
-                        <br>
-                        Send us a message to get it fixed!
-                    </h3>
-                </div>
-                <div class="col-md-6 border">
-                    <h1 class="pi-item">Message</h1>
-                    <form>
-
-                        <fieldset class="form-group"> <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        </fieldset>
-                        <fieldset class="form-group"> <label for="exampleInputmessage">Message</label>
-                            <input type="text" class="form-control" id="exampleInputmessage" placeholder="Your message">
-                        </fieldset>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+            <div class="row d-flex flex-column justify-items-center align-items-center">
+                <div class="col-md-6 text-center border">
+                    <h1>Contact Us</h1>
+                    <p>Having issues with your account?</p>
+                    <p>Send us a message to get it fixed!</p>
+                    <label class="form-inline" for="exampleInputEmail1">Email address</label>
+                    <fieldset class="form-group form-inline w-100">
+                        <input type="email" class="form-control w-100" id="exampleInputEmail1" placeholder="Enter email">
+                    </fieldset>
+                    <label class="form-inline" for="contact-us-text">Message</label>   
+                    <textarea class="form-control" name="contact-us-text" cols="55" rows="3" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn btn-danger mt-3 w-100">Submit</button>                    
                 </div>
             </div>
         </div>
@@ -141,42 +127,8 @@
     </div>
     <!--Footer-->
     <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <ul class="list-inline">
-                        <br>
-                        <br>
-                        <li class= "list-inline-item text-justify" id="footer-title">Jobster © 2018 - All Rights Reserved. <br></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bottom-links">
-                        <a href="#profile">
-                            <li>Home</li>
-                        </a>
-                        <a href="#profile">
-                            <li>Profile</li>
-                        </a>
-                        <a href="#matches">
-                            <li>Matches</li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="bottom-links">
-                        <a href="#contact">
-                            <li>Contact</li>
-                        </a>
-                        <a href="#">
-                            <li>Log-Out</li>
-                        </a>
-                        <a href="#">
-                            <li>Edit-Profile</li>
-                        </a>
-                    </ul>
-                </div>
-            </div>
+        <div class="container d-flex flex-row justify-content-center">
+            <h6>Jobster © 2018 - All Rights Reserved.</h6>
         </div>
     </div>
 
@@ -189,7 +141,7 @@
             <button type="button" id="edit-a-job-button" class="btn btn-danger m-3">Edit an existing job</button>
             <button type="button" id="delete-a-job-button" class="btn btn-danger m-3">Delete an existing job</button>
         </div>
-    </form> -->
+    </form>
     <!--Adding a job: form-->
     <form id="adding-job-modal" class="modal">
         <h6 class="modal-break p-1 text-center">Create Your Job to Find Hires!</h6>
@@ -232,7 +184,7 @@
         <div class="d-flex flex-row">
             <button type="button" class="btn btn-danger w-100" id="job-submit">Register Job</button>
         </div>
-    </form> -->
+    </form>
     <!--Editing Job-->
     <!--Deleting Job-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
@@ -242,8 +194,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/applicant.js"></script>
-    <script src="assets/js/match.js"></script>
+    <!-- <script src="assets/js/match.js"></script> -->
 </body>
 
 </html>
