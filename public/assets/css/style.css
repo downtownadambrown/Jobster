@@ -3,9 +3,6 @@ html, body {
     width: 100%;
     color: white;
 }
-.titles {
-    color: #fff;
-}
 
 body {
     background-color: rgb(124, 0, 0, 0.9);
@@ -59,9 +56,20 @@ a {
 .img-bio {
     padding: 12px; 
 }
+
 .footer {
     background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    width: 100%;
+    position: absolute;
 }
+
+.footer-login {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    width: 100%;
+}
+
 #footer-title {
     color: white;
 }

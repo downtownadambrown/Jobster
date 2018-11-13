@@ -31,14 +31,15 @@
                 </div>
             </div>
         </nav>
-
-        <div class="row top-spacer" id="profile">
+    </div>
+    <!--Profile Section-->
+    <!-- Includes an image/Video and what was fed into the page-->
+    <div class="container top-spacer" id="profile">
+        <div class="row">
             <div class="col-lg-12 border">
                 <h2 class="h2-custom pt-3 pl-3"><strong class="titles">Profile</strong></h2>
             </div>
         </div>
-        
-        <!--Profile Section-->
         <div class="row">
             <div class="col-lg-6 border">
                 <img class="float-left img-bio" src="https://pingendo.com/assets/photos/user_placeholder.png" alt="profile photo"
@@ -76,7 +77,10 @@
                 </div>
             </div>
         </div>
-        <!--Carousel-->
+    </div>
+
+    <!--Carousel-->
+    <div class="container">
         <div class="row">
             <div class="col d-flex flex-row justify-content-center border">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -101,36 +105,37 @@
                 </div>
             </div>
         </div>
-        <div class="row d-flex flex-column justify-items-center align-items-center">
-            <div class="col-md-6 text-center border">
-                <h1>Contact Us</h1>
-                <p>Having issues with your account?</p>
-                <p>Send us a message to get it fixed!</p>
-                <label class="form-inline" for="exampleInputEmail1">Email address</label>
-                <fieldset class="form-group form-inline w-100">
-                    <input type="email" class="form-control w-100" id="exampleInputEmail1" placeholder="Enter email">
-                </fieldset>
-                <label class="form-inline" for="contact-us-text">Message</label>
-                <textarea class="form-control" name="contact-us-text" cols="55" rows="3" placeholder="Your message"></textarea>
-                <button type="submit" class="btn btn-danger mt-3 w-100">Submit</button>
+    </div>
+
+    <!--Contact Form-->
+    <div class="bg-faded py-5">
+        <div class="container">
+            <div class="row d-flex flex-column justify-items-center align-items-center">
+                <div class="col-md-6 text-center border">
+                    <h1>Contact Us</h1>
+                    <p>Having issues with your account?</p>
+                    <p>Send us a message to get it fixed!</p>
+                    <label class="form-inline" for="exampleInputEmail1">Email address</label>
+                    <fieldset class="form-group form-inline w-100">
+                        <input type="email" class="form-control w-100" id="exampleInputEmail1" placeholder="Enter email">
+                    </fieldset>
+                    <label class="form-inline" for="contact-us-text">Message</label>
+                    <textarea class="form-control" name="contact-us-text" cols="55" rows="3" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn btn-danger mt-3 w-100">Submit</button>
+                </div>
             </div>
         </div>
     </div>
+
+
     <!--Footer-->
-    <div class="footer-login">
+    <div class="footer">
         <div class="container d-flex flex-row justify-content-center">
             <h6>Jobster © 2018 - All Rights Reserved.</h6>
         </div>
     </div>
-    
-    <!-- Includes an image/Video and what was fed into the page-->
 
-    
-
-
-    <!--Contact Form-->
-
-    <!-- Job Options Section -->
+    <!-- MODAL for Job Options Section -->
     <form id="job-modal" class="modal">
         <div class="d-flex flex-column">
             <button type="button" rel="modal:close" id="add-a-job-button" class="btn btn-danger m-3">Add a Job</button>
@@ -138,7 +143,8 @@
             <button type="button" id="delete-a-job-button" class="btn btn-danger m-3">Delete an existing job</button>
         </div>
     </form>
-    <!--Adding a job: form-->
+
+    <!--MODAL for Adding a job: form-->
     <form id="adding-job-modal" class="modal">
         <h6 class="modal-break p-1 text-center">Create Your Job to Find Hires!</h6>
         <div class="form-group form-inline p-1">
@@ -181,6 +187,7 @@
             <button type="button" class="btn btn-danger w-100" id="job-submit">Register Job</button>
         </div>
     </form>
+
     <!--Editing Job-->
     <!--Deleting Job-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
@@ -191,6 +198,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="assets/js/app.js"></script>
     <!-- <script src="assets/js/match.js"></script> -->
+
 </body>
 
 </html>
