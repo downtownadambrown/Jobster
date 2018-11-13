@@ -6,7 +6,7 @@ module.exports = function(connection, Sequelize) {
     var Job = connection.define('Job', {
 
         //Define field names in table Job
-        title: {
+        position: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
@@ -14,54 +14,13 @@ module.exports = function(connection, Sequelize) {
             }
         },
 
-        companyName: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            validate: {
-                notEmpty:true
-            }
-        },
-
-        compensationLow: {
+        hourlyRate: {
             type: Sequelize.FLOAT,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
-
-        compensationHigh: {
-            type: Sequelize.FLOAT,
-            allowNull: false,
-            validate: {
-                notEmpty: true
-            }
-        },
-
-        responsibilities1: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            validate: {
-                notEmpty:true
-            }
-        },
-
-        responsibilities2: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            validate: {
-                notEmpty:true
-            }
-        },
-
-        responsibilities3: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            validate: {
-                notEmpty:true
-            }
-        },
-
 
         hours: {
             type: Sequelize.STRING,
@@ -70,48 +29,7 @@ module.exports = function(connection, Sequelize) {
                 notEmpty:true
             }
         },
-
-        logo_url: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            // validate: {
-            //     notEmpty:true
-            // }
-        },
-
         
-        keyword1: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            validate: {
-                notEmpty:true
-            }
-        },
-
-        keyword2: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            validate: {
-                notEmpty:true
-            }
-        },
-
-        keyword3: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            validate: {
-                notEmpty:true
-            }
-        },
-
-        website: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            validate: {
-                notEmpty:true
-            }
-        },
-
         startDate: {
             type: Sequelize.DATEONLY,
             allowNull: true,

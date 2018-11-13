@@ -5,13 +5,7 @@ $(function () {
 //*************FUNCTION appUserInput*************** */
 // retrieves applicant's input data when submit button is clicked
 
-const appUserInput = function (event) {
-        //Takes in the data from the applicant form and clears form after submit.
 
-        // event.preventDefault() prevents the form from trying to submit itself.
-        // We're using a form so that the user can hit enter instead of clicking the button if they want
-        event.preventDefault();
-        console.log("addUserInput");
 
 
 console.log("addUserInput");
