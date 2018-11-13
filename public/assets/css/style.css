@@ -76,3 +76,7 @@ a {
     border-radius: 22px;
     padding: 24px;
 }
+
+.top-spacer {
+    margin-top: 80px;
+}
