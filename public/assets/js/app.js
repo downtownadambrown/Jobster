@@ -142,7 +142,9 @@ const postJob = function (data) {
         data: data
     }).then(function () {
         console.log("POST");
-
+        localStorage.setItem("loggedIn", true);
+        localStorage.setItem("userId", res.id);
+        window.location.replace("/manager-profile");
     });
 };
 
@@ -196,6 +198,7 @@ $(document).ready(function () {
     $('#app-submit').on('click', appUserInput);
 
     $('#job-submit').on('click', jobInput);
+    console.log('It worked!');
     
 });
 
