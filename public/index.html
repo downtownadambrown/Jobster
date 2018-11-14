@@ -40,6 +40,11 @@
             </div>
         </div>
     </div>
+    <div class="footer">
+            <div class="container d-flex flex-row justify-content-center">
+                <h6>Jobster © 2018 - All Rights Reserved.</h6>
+            </div>
+        </div>
 
     <!-- USER INPUT             -->
     <form id="sign-up-type-modal" class="modal">
@@ -50,7 +55,7 @@
         </div>
     </form>
 
-    <form id="register-modal" class="modal">
+    <form id="register-modal" class="modal text-dark">
         <h6 class="modal-break p-1 text-center">Create your profile and get hired!</h6>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">First Name</label>
@@ -66,7 +71,7 @@
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Phone Number</label>
-            <input type="tel" class="form-control" id="app-phone" placeholder="(    )         -">
+            <input type="tel" class="form-control" id="app-phone" placeholder="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Availability to Start</label>
@@ -83,12 +88,12 @@
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Profile Video (30 sec max)</label>
-            <input type="file" name="upload_video" id="app-video"/>
+            <input type="file" name="upload_video" id="app-video" />
         </div>
         <h6 class="modal-break p-1 text-center mt-2">Job Preferences</h6>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlSelect1" class="mr-auto">Position you are targeting</label>
-            <select class="form-control" id="app-title">
+            <select class="form-control" id="app-job-title">
                 <option>Waiter</option>
                 <option>Host</option>
                 <option>Busser</option>
@@ -111,7 +116,7 @@
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlSelect1" class="mr-auto">Full-Time / Part-Time</label>
-            <select class="form-control" id="app-title">
+            <select class="form-control" id="app-ftpt">
                 <option>Full-Time</option>
                 <option>Part-Time</option>
             </select>
@@ -123,7 +128,7 @@
 
 
     <!-- Manager Input Fields-->
-    <form id="managerInput-modal" class="modal">
+    <form id="manager-input-modal" class="modal text-dark">
         <h6 class="modal-break p-1 text-center">Create your profile to find hires!</h6>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">First Name</label>
@@ -139,12 +144,12 @@
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Phone Number</label>
-            <input type="tel" class="form-control" id="manager-phone" placeholder="(    )         -">
+            <input type="tel" class="form-control" id="manager-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         </div>
-        <div class="form-group">
-                <label for="exampleInputPassword1">Create a password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" id= "managerPw" placeholder="Password" Required>
-              </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleInputPassword1" class="mr-auto">Create a password</label>
+            <input type="password" class="form-control" id="manager-pw" id="managerPw" placeholder="Password" Required>
+        </div>
 
         <h6 class="modal-break p-1 text-center mt-1">Help applicants know your company!</h6>
 
@@ -153,8 +158,8 @@
             <input type="text" class="form-control" id="manager-company" placeholder="Company Name" required>
         </div>
         <div class="form-group p-1">
-            <label for="exampleFormControlInput1" class="mr-auto">Company Site</label>
-            <input type="text" class="form-control" id="manager-url" placeholder="Url">
+            <label for="exampleFormControlInput1" class="mr-auto">Company Website</label>
+            <input type="text" class="form-control" id="manager-url" placeholder="copy + paste your company website URL">
         </div>
         <div class="form-group p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Company LinkedIn Profile URL</label>
@@ -176,9 +181,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/applicant.js"></script>
-    <script src="assets/js/match.js"></script>
 </body>
 
 </html>
