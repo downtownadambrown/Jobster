@@ -20,12 +20,7 @@ $(function (){
         $('#job-rate').val('');
         $('#job-hours').val('');
         $('#job-start').val('');
-        $('#manager-image').val('');
-        $('#managerPw').val('');
-        $('#manager-company').val('');
-        $('#manager-url').val('');
-        $('#manager-linkedIn').val('');
-        $('#manager-zip').val('');
+        $('#job-zip').val('');
     
         postManager(manager);
     };

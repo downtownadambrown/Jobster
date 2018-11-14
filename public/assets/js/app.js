@@ -51,30 +51,6 @@ const postManager = function (data) {
         window.location.replace("/manager-profile");
     });
 };
-const renderedData = function () {
-    console.log('renderedData');
-
-    //Retrieve the newly created manager data
-    $.get('/api/manager/')
-    .then(function (data) {
-        console.log("data inside get /api/manager promise", data);
-
-        //Append the information to the page
-        $('#manager-first-name').append('Manager');
-
-
-        $('#first-name').append('#manager-name-first');
-        $('#last-name').append('#manager-name-last');
-        $('#email').append('#manager-email');
-        $('#phone').append('#manager-phone');
-        $('#company').append('#manager-company');
-        $('#linkedIn').append('#manager-linkedIn');
-        $('#companyUrl').append('#manager-url');
-        $('#zip').append('#manager-zip');
-    });
-};
-
-
 //*************FUNCTION appUserInput*************** */
 // retrieves applicant's input data when submit button is clicked
 const appUserInput = function () {
@@ -158,6 +134,7 @@ const jobInput = function () {
 
 const postJob = function (data) {
     console.log("postJob");
+    console.log("Data:", data);
 
     $.ajax({
         method: 'POST',
@@ -165,6 +142,7 @@ const postJob = function (data) {
         data: data
     }).then(function () {
         console.log("POST");
+
     });
 };
 

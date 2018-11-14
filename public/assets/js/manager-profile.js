@@ -1,3 +1,7 @@
+// This file is for the manager profile page- Populating the data onto the screen
+//DO NOT DELETE THIS PAGE
+
+
 (function ($) {
     const managerId = localStorage.getItem("userId");
     $.get(`/api/manager/${managerId}`)
@@ -11,7 +15,7 @@
 
             $('#first-name').text(manager.firstName);
             $('#last-name').text(manager.lastName);
-            $('#email').text(manger.email);
+            $('#email').text(manager.email);
             $('#phone').text(manager.phone);
             $('#manager-image').text(manager.image);
             $('#company').text(manager.companyName);
