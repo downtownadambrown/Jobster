@@ -8,7 +8,7 @@ module.exports = function (connection, Sequelize) {
         //Define field names in table Applicant
         firstName: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -16,7 +16,7 @@ module.exports = function (connection, Sequelize) {
 
         lastName: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -24,7 +24,7 @@ module.exports = function (connection, Sequelize) {
 
         email: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -32,7 +32,7 @@ module.exports = function (connection, Sequelize) {
 
         phone: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -40,7 +40,7 @@ module.exports = function (connection, Sequelize) {
 
         linkedIn: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             // validate: {
             //     notEmpty:true
             // }
@@ -48,7 +48,7 @@ module.exports = function (connection, Sequelize) {
 
         personalUrl: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             // validate: {
             //     notEmpty:true
             // }
@@ -56,7 +56,7 @@ module.exports = function (connection, Sequelize) {
 
         linkedIn: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -64,7 +64,7 @@ module.exports = function (connection, Sequelize) {
 
         personalUrl: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -72,7 +72,7 @@ module.exports = function (connection, Sequelize) {
 
         availability: {
             type: Sequelize.DATEONLY,
-            allowNull: true,
+            // allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -80,7 +80,7 @@ module.exports = function (connection, Sequelize) {
 
         zipcode: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -88,7 +88,7 @@ module.exports = function (connection, Sequelize) {
 
         salary: {
             type: Sequelize.FLOAT,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -96,7 +96,7 @@ module.exports = function (connection, Sequelize) {
 
         videoUrl: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             // validate: {
             //     notEmpty:true
             // }
@@ -104,7 +104,8 @@ module.exports = function (connection, Sequelize) {
 
         jobtitle: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
+            defaultValue: "undeclared-position",
             validate: {
                 notEmpty: true
             }

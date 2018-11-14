@@ -12,6 +12,7 @@ class Routes {
         this.app.get(`/api/${this.resource}`, (req, res) => {
             this.model.findAll({})
             .then(function(data) {
+                console.log("findall method called, data: ")
                 res.json(data);
             })
             .catch(function(err){
