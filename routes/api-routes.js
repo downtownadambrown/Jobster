@@ -9,6 +9,7 @@ module.exports = function(app) {
     applicant.create();
     applicant.delete("id");
     applicant.update("id");
+    applicant.match("match", "waiter")
 
     const job = new Routes("job", app, models.Job);
     job.findAll();
