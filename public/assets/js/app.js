@@ -12,7 +12,7 @@ const collectManagerInput = function () {
         lastName: $('#manager-name-last').val().trim(),
         email: $('#manager-email').val().trim(),
         phone: $('#manager-phone').val().trim(),
-        image: $('#manager-image').val().trim(),
+         image: $('#manager-image').val().trim(),
         password: $('#manager-pw').val().trim(),
         companyName: $('#manager-company').val().trim(),
         companySite: $('#manager-url').val().trim(),
@@ -48,8 +48,7 @@ const postManager = function (data) {
         // Redirect to managers-profile page
         localStorage.setItem("loggedIn", true);
         localStorage.setItem("userId", res.id);
-        //   window.location.replace("/manager-profile");
-        
+        window.location.replace("/manager-profile");
     });
 };
 const renderedData = function () {
@@ -68,7 +67,6 @@ const renderedData = function () {
         $('#last-name').append('#manager-name-last');
         $('#email').append('#manager-email');
         $('#phone').append('#manager-phone');
-        $('#image-manager').append('#manager-image');
         $('#company').append('#manager-company');
         $('#linkedIn').append('#manager-linkedIn');
         $('#companyUrl').append('#manager-url');

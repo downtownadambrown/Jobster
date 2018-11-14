@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manager Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!--Navbar-->
+    <div class="container" id="big-wrapper">
+        <nav class="navbar navbar-expand-lg black-opacity fixed-top justify-content-center">
+            <div class="container" id="navContainer">
+                <a class="navbar-brand" href="#">Revolutionizing how we hire people</a>
+                <div class="navbar-nav d-flex flex-row" id="nav-links">
+                    <a class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">|</a>
+                    <a class="nav-item nav-link" href="#profile">Profile</a>
+                    <a class="nav-item nav-link" href="#">|</a>
+                    <a class="nav-item nav-link" href="#jobs">Jobs</a>
+                    <a class="nav-item nav-link" href="#">|</a>
+                    <a class="nav-item nav-link" href="#contact">Contact</a>
+                    <a class="nav-item nav-link" href="#">|</a>
+                    <a class="nav-item nav-link" href="#">Log-Out</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--Profile Section-->
+    <!-- Includes an image/Video and what was fed into the page-->
+    <div class="container top-spacer" id="profile">
+        <div class="row">
+            <div class="col-lg-12 border">
+                <h2 class="h2-custom pt-3 pl-3"><strong class="titles">Profile</strong></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 border">
+                <img class="float-left img-bio" id="manager-image" src="https://pingendo.com/assets/photos/user_placeholder.png" alt="profile photo"
+                    width="400px">
+            </div>
+            <div class="col-lg-6 border">
+                <ul>
+                    <!--append each of the applicants data here-->
+                    <!-- TODO: try to remove br tags -->
+                    <li id="first-name"></li><br>
+                    <li id="last-name"></li><br>
+                    <li id="email"></li><br>
+                    <li id="phone"></li><br>
+                    <li id="company"></li><br>
+                    <li id="linkedIn"></li><br>
+                    <li id="companyUrl"></li><br>
+                    <li id="zip"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 border">
+                <h2 class="h2-custom pt-3 pl-3 "><strong></strong></h2>
+                <!--Section to be added-->
+                <p></p>
+            </div>
+            <div class="col-md-4 border">
+                <h2 class="h2-custom pt-3 pl-3"><strong> </strong></h2>
+            </div>
+            <div class="col-md-4 border">
+                <div class="col text-center text-light d-flex flex-column align-items-center justify-content-center" id="job-btn">
+                    <p>Click to add or edit a job posting:</p>
+                    <div id="button-container">
+                        <button type="button" id="job-button" class="btn btn-danger m-3">Jobs</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Carousel-->
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex flex-row justify-content-center border">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner" id="carousel-append-location">
+                      <div class="carousel-item active">
+                        <img class="carouselImg" id="app-image" src="https://i.etsystatic.com/13662647/r/il/64ebbe/1363010095/il_570xN.1363010095_7n7f.jpg" alt="First slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="carouselImg" id="app-image" src="" alt="First slide">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only" id="app-forward">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only" id="app-backward">Next</span>
+                      jdsfhjdf
+                    </a>
+                  </div>
+            </div>
+        </div>
+    </div>
+    
+ <!--Contact Form-->
+<div class="bg-faded py-5">
+        <div class="container">
+            <div class="row d-flex flex-column justify-items-center align-items-center">
+                <div class="col-md-6 text-center border">
+                    <h1>Contact Us</h1>
+                    <p>Having issues with your account?</p>
+                    <p>Send us a message to get it fixed!</p>
+                    <label class="form-inline" for="exampleInputEmail1">Email address</label>
+                    <fieldset class="form-group form-inline w-100">
+                        <input type="email" class="form-control w-100" id="exampleInputEmail1" placeholder="Enter email">
+                    </fieldset>
+                    <label class="form-inline" for="contact-us-text">Message</label>   
+                    <textarea class="form-control" name="contact-us-text" cols="55" rows="3" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn btn-danger mt-3 w-100">Submit</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--Footer-->
+    <div class="footer">
+        <div class="container d-flex flex-row justify-content-center">
+            <h6>Jobster © 2018 - All Rights Reserved.</h6>
+        </div>
+    </div>
+
+
+
+    <!-- Job Options Section -->
+    <form id="job-modal" class="modal">
+        <div class="d-flex flex-column">
+            <button type="button" rel="modal:close" id="add-a-job-button" class="btn btn-danger m-3">Add a Job</button>
+            <button type="button" id="edit-a-job-button" class="btn btn-danger m-3">Edit an existing job</button>
+            <button type="button" id="delete-a-job-button" class="btn btn-danger m-3">Delete an existing job</button>
+        </div>
+    </form>
+    <!--Adding a job: form-->
+    <form id="adding-job-modal" class="modal">
+        <h6 class="modal-break p-1 text-center">Create Your Job to Find Hires!</h6>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlSelect1" class="mr-auto" id="job-position">Position you are looking for</label>
+            <select class="form-control" id="app-title">
+                <option>Waiter</option>
+                <option>Host</option>
+                <option>Busser</option>
+                <option>Server</option>
+                <option>Cook</option>
+                <option>Line Cook</option>
+                <option>Bartender</option>
+                <option>Dishwasher</option>
+                <option>Manager</option>
+                <option>Assistant</option>
+            </select>
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto" id="job-rate">Hourly Rate</label>
+            <input type="number" class="form-control" id="app-rate" placeholder="$">
+        </div>
+        <div class="form-group fomr-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto" id="job-start">Start Date</label>
+            <input type="date" class="form-control" id="comp-start" placeholder="mm/dd/yyyy" required>
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlSelect1" class="mr-auto" id="job-hours">Full-Time / Part-Time</label>
+            <select class="form-control" id="app-title">
+                <option>Full-Time</option>
+                <option>Part-Time</option>
+            </select>
+        </div>
+
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto" id="job-zip">Location Zip Code</label>
+            <input type="text" class="form-control" id="app-zip" placeholder="Zip Code">
+        </div>
+
+        <div class="d-flex flex-row">
+            <button type="button" class="btn btn-danger w-100" id="job-submit">Register Job</button>
+        </div>
+    </form>
+    <!--Editing Job-->
+    <!--Deleting Job-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/manager-profile.js"></script>
+    <!-- <script src="assets/js/match.js"></script> -->
+</body>
+
+</html>
