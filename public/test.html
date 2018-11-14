@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jobster</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!----Pairing job to applicant-->
+
+    <!-- <div id="applicant-view">fgfgfgfgfgf</div> -->
+
+    <div id="app-image">image</div>
+    <div id="app-forward">forward</div>
+    <div id="app-backward">backward</div>
+    <div id="app-no">no</div>
+    <div id="app-yes">yes</div>
+    <div id="app-heart">heart</div>
+    
+
+    <!-- <div class="container" id="big-wrapper">
+        <nav class="navbar navbar-expand-lg black-opacity fixed-top justify-content-center">
+            <div class="container" id="navContainer">
+                <a class="navbar-brand" href="#">Revolutionizing how we hire people</a>
+                <div class="navbar-nav d-flex flex-row" id="nav-links">
+                    <a class="nav-item nav-link active" href="#">About Us<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Features</a>
+                    <a class="nav-item nav-link" href="#">|</a>
+                    <a class="nav-item nav-link" href="#">Sign Up</a>
+                    <a class="nav-item nav-link" href="#">Login</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col text-center text-light d-flex flex-column align-items-center justify-content-center" id="main">
+                <h1>Jobster</h1>
+                <div id="button-container">
+                    <button type="button" id="sign-up-button" class="btn btn-danger m-3">Register</button>
+                    <button type="button" id="login-button" class="btn btn-danger m-3">Login</button>
+                </div>
+            </div>
+        </div>
+        USER INPUT            
+
+    </div>
+
+    <form id="sign-up-type-modal" class="modal">
+        <div class="d-flex flex-column">
+            <button type="button" rel="modal:close" id="app-sign-up-button" class="btn btn-danger m-3">Sign up as a Job Seeker</button>
+            <button type="button" id="mgr-sign-up-button" class="btn btn-danger m-3">Sign up as a Hiring Manager</button>
+        </div>
+    </form>
+
+    <form id="register-modal" class="modal">
+        <h6 class="modal-break p-1 text-center">Create your profile and get hired!</h6>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">First Name</label>
+            <input type="text" class="form-control" id="app-name-first" placeholder="First Name">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Last Name</label>
+            <input type="text" class="form-control" id="app-name-last" placeholder="Last Name">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Email address</label>
+            <input type="email" class="form-control" id="app-email" placeholder="name@example.com">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Phone Number</label>
+            <input type="tel" class="form-control" id="app-phone" placeholder="(    )         -">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Availability to Start</label>
+            <input type="date" class="form-control" id="app-avail" placeholder="mm/dd/yyyy">
+        </div>
+        <h6 class="modal-break p-1 text-center mt-1">Help managers know you better!</h6>
+        <div class="form-group p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">LinkedIn Profile URL</label>
+            <input type="url" class="form-control" id="app-linkedIn" placeholder="copy + paste your LinkedIn">
+        </div>
+        <div class="form-group p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Personal Site (if applicable)</label>
+            <input type="text" class="form-control" id="app-url" placeholder="Portfolio site, Github, etc..">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Profile Video (30 sec max)</label>
+            <input type="file" name="upload_video" id="app-video"/>
+        </div>
+        <h6 class="modal-break p-1 text-center mt-2">Job Preferences</h6>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlSelect1" class="mr-auto">Position you are targeting</label>
+            <select class="form-control" id="app-title">
+                <option>Waiter</option>
+                <option>Host</option>
+                <option>Busser</option>
+                <option>Server</option>
+                <option>Cook</option>
+                <option>Line Cook</option>
+                <option>Bartender</option>
+                <option>Dishwasher</option>
+                <option>Manager</option>
+                <option>Assistant</option>
+            </select>
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Preferred Work Zip Code</label>
+            <input type="text" class="form-control" id="app-zip" placeholder="Zip Code">
+        </div>
+        <div class="form-group form-inline p-1">
+            <label for="exampleFormControlInput1" class="mr-auto">Hourly Rate</label>
+            <input type="number" class="form-control" id="app-rate" placeholder="$">
+        </div>
+        <div class="d-flex flex-row">
+            <button type="button" class="btn btn-danger w-100" id="app-submit">Register</button>
+        </div> -->
+        
+    <!-- </form> --> -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/applicant.js"></script>
+    <script src="assets/js/match.js"></script>
+</body>
+
+</html>

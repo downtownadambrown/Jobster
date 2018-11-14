@@ -5,6 +5,7 @@ $(function () {
 //*************FUNCTION appUserInput*************** */
 // retrieves applicant's input data when submit button is clicked
 
+const appUserInput = function() {
 
 
 

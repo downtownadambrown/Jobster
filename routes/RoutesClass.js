@@ -72,6 +72,26 @@ class Routes {
         })
     }
 
+    //Match method for matching applicants with jobs
+    match(identifier, title) {
+        // this.app.get(`/api/${this.resource}/:${identifier}`, (req, res) => {
+        this.app.get(`/api/applicant/match`, (req, res) => {    
+           this.model.findAll({
+            // where: {
+            //     jobtitle: "Waiter",
+            //   }
+            })
+            .then(function(data) {
+                res.json(data);
+            })
+            .catch(function(err){
+                res.json(err);
+            })
+        })
+    };
+
+
+
 //Private methods-----------------------------------------------------------
 
     //This section is for secure transmission of personal data, such as messages
