@@ -92,3 +92,19 @@ a {
 .top-spacer {
     margin-top: 80px;
 }
+
+.nav-item {
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    color: red;
+}
+
+#show-when-logged-in {
+    display: none;
+}
+
+.login-spacer{
+    padding-top: 150px;
+}
