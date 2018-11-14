@@ -1,4 +1,4 @@
-
+$(function (){   
 //*************FUNCTION managerInput*************** */
 // retrieves manager's input data when submit button is clicked
 const collectManagerInput = function () {
@@ -12,6 +12,7 @@ const collectManagerInput = function () {
         lastName: $('#manager-name-last').val().trim(),
         email: $('#manager-email').val().trim(),
         phone: $('#manager-phone').val().trim(),
+         image: $('#manager-image').val().trim(),
         password: $('#manager-pw').val().trim(),
         companyName: $('#manager-company').val().trim(),
         companySite: $('#manager-url').val().trim(),
@@ -24,6 +25,7 @@ const collectManagerInput = function () {
     $('#manager-name-last').val('');
     $('#manager-email').val('');
     $('#manager-phone').val('');
+    $('#manager-image').val('');
     $('#managerPw').val('');
     $('#manager-company').val('');
     $('#manager-url').val('');
@@ -35,19 +37,20 @@ const collectManagerInput = function () {
 
 const postManager = function (data) {
     console.log("postManager");
-
+    console.log("Data:", data);
+    //Post the managers input data
     $.ajax({
         method: 'POST',
         url: ('/api/manager'),
         data: data
     }).then(function (res) {
+        console.log("Res:", res);
+        // Redirect to managers-profile page
         localStorage.setItem("loggedIn", true);
         localStorage.setItem("userId", res.id);
         window.location.replace("/manager-profile");
     });
 };
-
-
 //*************FUNCTION appUserInput*************** */
 // retrieves applicant's input data when submit button is clicked
 const appUserInput = function () {
@@ -58,7 +61,6 @@ const appUserInput = function () {
     let applicant = {
         firstName: $('#app-name-first').val().trim(),
         lastName: $('#app-name-last').val().trim(),
-        email: $('#app-pass').val().trim(),
         email: $('#app-email').val().trim(),
         phone: $('#app-phone').val().trim(),
         linkedIn: $('#app-linkedIn').val().trim(),
@@ -104,7 +106,6 @@ const postApplicant = function (data) {
     });
 };
 
-
 // gets the form information from the page, clears it and then sends that data
 const jobInput = function () {
 
@@ -133,6 +134,7 @@ const jobInput = function () {
 
 const postJob = function (data) {
     console.log("postJob");
+    console.log("Data:", data);
 
     $.ajax({
         method: 'POST',
@@ -140,6 +142,9 @@ const postJob = function (data) {
         data: data
     }).then(function () {
         console.log("POST");
+        localStorage.setItem("loggedIn", true);
+        localStorage.setItem("userId", res.id);
+        window.location.replace("/manager-profile");
     });
 };
 
@@ -186,13 +191,15 @@ $(document).ready(function () {
 
     //event listeners for manager submitting their new profile
     $('#manager-submit').on('click', function(){
-        console.log('hurrrr');
+        console.log('It worked!!');
         collectManagerInput();
     });
 
     $('#app-submit').on('click', appUserInput);
 
     $('#job-submit').on('click', jobInput);
+    console.log('It worked!');
     
 });
 
+});

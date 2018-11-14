@@ -132,20 +132,24 @@
         <h6 class="modal-break p-1 text-center">Create your profile to find hires!</h6>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">First Name</label>
-            <input type="text" class="form-control" id="manager-name-first" placeholder="First Name">
+            <input type="text" class="form-control" id="manager-name-first" value="Joe" placeholder="First Name">
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Last Name</label>
-            <input type="text" class="form-control" id="manager-name-last" placeholder="Last Name">
+            <input type="text" class="form-control" id="manager-name-last" value="Smith" placeholder="Last Name">
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Email address</label>
-            <input type="email" class="form-control" id="manager-email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="manager-email" value="joe@joe.com" placeholder="name@example.com">
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Phone Number</label>
             <input type="tel" class="form-control" id="manager-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         </div>
+        <div class="form-group form-inline p-1">
+                <label for="exampleFormControlInput1" class="mr-auto">Link to photo image (Required, url link)</label>
+                <input type="text" name="upload_image" class="form-control" id="manager-image" />
+            </div>
         <div class="form-group form-inline p-1">
             <label for="exampleInputPassword1" class="mr-auto">Create a password</label>
             <input type="password" class="form-control" id="manager-pw" id="managerPw" placeholder="Password" Required>
@@ -155,19 +159,19 @@
 
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Company Name</label>
-            <input type="text" class="form-control" id="manager-company" placeholder="Company Name" required>
+            <input type="text" class="form-control" id="manager-company" value="Test" placeholder="Company Name" required>
         </div>
         <div class="form-group p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Company Website</label>
-            <input type="text" class="form-control" id="manager-url" placeholder="copy + paste your company website URL">
+            <input type="text" class="form-control" id="manager-url" value="test.com" placeholder="copy + paste your company website URL">
         </div>
         <div class="form-group p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Company LinkedIn Profile URL</label>
-            <input type="url" class="form-control" id="manager-linkedIn" placeholder="copy + paste your company LinkedIn">
+            <input type="url" class="form-control" id="manager-linkedIn" value="test.link.com" placeholder="copy + paste your company LinkedIn">
         </div>
         <div class="form-group form-inline p-1">
             <label for="exampleFormControlInput1" class="mr-auto">Location Zip Code</label>
-            <input type="text" class="form-control" id="manager-zip" placeholder="Zip Code">
+            <input type="text" class="form-control" id="manager-zip" value="30102" placeholder="Zip Code">
         </div>
         <div class="d-flex flex-row">
             <button type="button" class="btn btn-danger w-100" id="manager-submit">Register</button>

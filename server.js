@@ -23,17 +23,11 @@ const db = require('./models');
     app.use(express.static(path.join(__dirname,'public')));
 
 //Routes
-<<<<<<< HEAD
     
     
     require('./routes/api-routes.js')(app);
     
     require('./routes/html-routes')(app);
-=======
-    require('./routes/html-routes.js')(app);
-    require('./routes/api-routes.js')(app);
-
->>>>>>> df6e36683a68f08185a878e08c7f6253d9832238
         
 //Sync our sequelize models then start our Express app, listen to PORT
 db.sequelize.sync().then(function() {

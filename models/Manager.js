@@ -9,7 +9,7 @@ module.exports = function(connection, Sequelize) {
         //manager_id is defined automatically as id and will be used as a foreign key for Jobs.
         firstName: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -17,7 +17,7 @@ module.exports = function(connection, Sequelize) {
 
         lastName: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -25,7 +25,7 @@ module.exports = function(connection, Sequelize) {
 
         email: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true,
                 isEmail: true
@@ -34,15 +34,23 @@ module.exports = function(connection, Sequelize) {
 
         phone: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true,
-                isNumeric: true
+                // isNumeric: true
+            }
+        },
+        image: {
+            type:Sequelize.STRING,
+            // allowNull:false,
+            defaultValue: "image undefined",
+            validate: {
+                notEmpty: true
             }
         },
         password: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true,
                 isAlphanumeric: true
@@ -50,14 +58,14 @@ module.exports = function(connection, Sequelize) {
         },
         companyName: {
             type: Sequelize.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
         companySite: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             validate: {
                 notEmpty: true,
                 isUrl: true
@@ -65,14 +73,14 @@ module.exports = function(connection, Sequelize) {
         },
         companyLinkedIn: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
         companyZipcode: {
             type: Sequelize.STRING,
-            allowNull: true,
+            // allowNull: true,
             validate: {
                 notEmpty: true
             }

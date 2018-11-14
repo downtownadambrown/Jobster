@@ -1,40 +1,37 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Message = sequelize.define('Message', {
         message: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
-                notEmpty:true
+                notEmpty: true
             }
         },
         //names of sending and received
         sent: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
-                notEmpty:true
+                notEmpty: true
             }
         },
         received: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
-                notEmpty:true
+                notEmpty: true
             }
         }
     });
 
     // keep track of who are communicating
-    Message.associate = function(models) {
-        Message.belongsTo(models.Manager, {
-            foreignKey: {
-                allowNull: false
-            }
+    Message.associate = function (models) {
+        Message.belongsToMany(models.Manager, {
+            through: "ManagerApplicant"
+        
         });
-        Message.belongsTo(models.Applicant, {
-            foreignKey: {
-                allowNull: false
-            }    
+        Message.belongsToMany(models.Applicant, {
+            through: "ManagerApplicant"
         });
     };
 
