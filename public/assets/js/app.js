@@ -55,7 +55,7 @@ const postManager = function (data) {
 // retrieves applicant's input data when submit button is clicked
 const appUserInput = function () {
 
-    console.log("addUserInput");
+    console.log("appUserInput");
 
     //Grab the form elements and fill the applicant object
     let applicant = {
@@ -93,34 +93,50 @@ const appUserInput = function () {
 
 const postApplicant = function (data) {
 
+
     console.log("postApplicant");
+    console.log("Data:", data);
 
     $.ajax({
         method: 'POST',
         url: ('/api/applicant'),
         data: data
     }).then(function (res) {
+        console.log("Res:", res);
         //Just successfully added a new applicant
         //This is where we will redirect them to their login page
-
+localStorage.setItem("loggedIn", true);
+localStorage.setItem("userId", res.id);
+window.location.replace("/app-profile");
     });
 };
 
-// gets the form information from the page, clears it and then sends that data
-const jobInput = function () {
+// added the data from user onto the page div properties
+function populateJobInfo (job){
+    
+    $('#manager-job-position').text(job.position);
+    $('#manager-job-rate').text(job.hourlyRate);
+    $('#manager-job-start').text(job.startDate);
+    $('#manager-job-hours').text(job.hours);
+    $('#manager-job-zip').text(job.zipcode);
+}
 
-    e.preventDefault();
+// gets the form information from the page, clears it and then sends that data
+const collectJobInput = function () {
+
+    
     console.log('jobInput');
 
     let job = {
-        position: $('#job-position').val.trim(),
-        hourlyRate: $('#job-rate').val.trim(),
-        startDate: $('#job-start').val.trim(),
-        hours: $('#job-hours').val.trim(),
-        zipcode: $('#job-zip').val.trim()
+
+        position: $('#job-position').val(),
+        hourlyRate: $('#job-rate').val(),
+        startDate: new Date( $('#job-start').val()),
+        hours: $('#job-hours').val(),
+        zipcode: $('#job-zip').val()
     };
 
-    console.log("job", job);
+    console.log("--------------job-------------", job);
 
     //Clear the input form
     $('#job-position').val('');
@@ -129,24 +145,27 @@ const jobInput = function () {
     $('#job-hours').val('');
     $('#job-zip').val('');
 
+    populateJobInfo(job);
+
     postJob(job);
 };
 
 const postJob = function (data) {
     console.log("postJob");
-    console.log("Data:", data);
+    console.log("In POST JOB", data);
 
     $.ajax({
         method: 'POST',
         url: ('/api/job'),
         data: data
-    }).then(function () {
-        console.log("POST");
+    }).then(function (response) {
+        console.log(response, "This is our response from job post");
         localStorage.setItem("loggedIn", true);
-        localStorage.setItem("userId", res.id);
-        window.location.replace("/manager-profile");
+       // localStorage.setItem("userId", res.id);
+      //  window.location.replace("/manager-profile");
     });
 };
+
 
 $(document).ready(function () {
     // selects the sign up button 
@@ -189,17 +208,46 @@ $(document).ready(function () {
         });
     });
 
+    
+
     //event listeners for manager submitting their new profile
     $('#manager-submit').on('click', function(){
-        console.log('It worked!!');
+        console.log('Manager data recieved!!');
         collectManagerInput();
     });
 
-    $('#app-submit').on('click', appUserInput);
+    //event listener for applicant submitting their new profile
+    $('#app-submit').on('click', function() {
+        console.log('Applicant data recieved');
+        appUserInput();
+    });
 
-    $('#job-submit').on('click', jobInput);
-    console.log('It worked!');
+
+    //event listener for a new job being posted
+    $('#job-submit').on('click', function(event) {
+       console.log('In job submit');
+       event.preventDefault();
+     collectJobInput(); 
+    });
+    
     
 });
+// Posting a photo to the profile page- both the manager and applicant
+function previewFile(){
+    const preview = document.querySelector('img'); //selects the query named img
+    const file    = document.querySelector('input[type=file]').files[0]; //sames as here
+    const reader  = new FileReader();
 
+    reader.onloadend = function () {
+        preview.src = reader.result;
+    }
+
+    if (file) {
+        reader.readAsDataURL(file); //reads the data as a URL
+    } else {
+        preview.src = "";
+    }
+}
+
+previewFile();  //calls the function named previewFile()
 });

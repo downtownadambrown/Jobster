@@ -62,12 +62,16 @@ class Routes {
     // Create method for applicants, manager, jobs data
     // note: create JWT credential lata
     create() {
+       
         this.app.post(`/api/${this.resource}`, (req, res) => {
+            console.log(req.body, "This is the job post")
             this.model.create(req.body)
             .then(function(data) {
+                console.log('-------- in success ---------')
                 res.json(data);
             })
             .catch(function(err){
+                console.log("----- In error ---------")
                 res.json(err);
             })
         })

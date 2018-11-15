@@ -35,49 +35,49 @@
 
     <div class="container" id="profile" style="margin-top:30px">
         <div class="row">
-            <div class="col md 12 border">
+            <div class="col md 12 ">
                 <h2 class="h2-custom pt-3 pl-3"><strong class="titles">Profile</strong></h2>
             </div>
         </div>
         <div class="row">
-            <div class="col lg 6 border">
-                <img class="float-left img-bio" src="https://pingendo.com/assets/photos/user_placeholder.png" alt="profile photo"
-                    width="400px">
+            <div class="col lg 6 ">
+                <input type="file" onchange="previewFile()"><br>
+                <img src="" height="600" alt="Image preview..."> 
             </div>
-            <div class="col lg 6 border">
-                <ul>
+            <div class="col lg 6 border-left">
+               
                     <!--append each of the applicants data here-->
-                    <li id="first-name"></li><br>
-                    <li id="last-name"></li><br>
-                    <li id="email"></li><br>
-                    <li id="phone"></li><br>
-                    <li id="zip"></li><br>
-                    <li id="linkedIn"></li><br>
-                    <li id="personalUrl"></li><br>
-                    <li id="availability"></li><br>
-                    <li id="salary"></li><br>
-                    <li id="position"></li>
-                </ul>
+                    <b>First Name:</b><div id="first-name"></div><br>
+                    <b>Last Name:</b><div id="last-name"></div><br>
+                    <b>Email:</b><div id="email"></div><br>
+                    <b>Phone Number:</b><div id="phone"></div><br>
+                    <b>Zip-Code:</b><div id="zip"></div><br>
+                    <b>LinkedIn Profile Url:</b><div id="linkedIn"></div><br>
+                    <b>Persoal Url:</b><div id="personalUrl"></div><br>
+                    <b>Availability</b><div id="availability"></div><br>
+                    <b>Hourly Rate:</b><div id="salary"></div><br>
+                    <b>Position Applying for:</b><div id="position"></div>
+               
             </div>
         </div>
-        <div class="row">
-            <div class="col md 4 border">
-                <h2 class="h2-custom pt-3 pl-3"><strong class="titles">Matches:</strong></h2>
+        <div class="row app-border">
+            <div class="col md 4 ">
+                <h2 class="h2-custom pt-3 pl-3"><strong class="titles">Top Matches:</strong></h2>
                 <div class="row">
-                    <div class="col-md-4 border">
-                        <img src="https://pingendo.com/assets/photos/user_placeholder.png" class="d-block mx-auto rounded-circle img-fluid my-3"
+                    <div class="col-md-4 border-right">
+                        <img src="https://polygraphmedia.com/wp-content/uploads/2016/12/Cheddars-Scratch-Kitchen_logo_GREY.png" class="d-block mx-auto rounded-circle img-fluid my-3"
                             id="match1">
                         <h3 id="match1"></h3>
                         <p></p>
                     </div>
-                    <div class="col-md-4 border">
-                        <img src="https://pingendo.com/assets/photos/user_placeholder.png" class="d-block mx-auto rounded-circle img-fluid my-3"
+                    <div class="col-md-4 border-right">
+                        <img src="https://vignette.wikia.nocookie.net/logopedia/images/a/ad/Chilis-Grill-and-Bar-Logo.jpg/revision/latest?cb=20160711000133" class="d-block mx-auto rounded-circle img-fluid my-3"
                             id="match2">
                         <h3 id="match2"></h3>
                         <p></p>
                     </div>
-                    <div class="col-md-4 border">
-                        <img src="https://pingendo.com/assets/photos/user_placeholder.png" class="d-block mx-auto rounded-circle img-fluid my-3"
+                    <div class="col-md-4 ">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Redlobster_logocopia.png" class="d-block mx-auto rounded-circle img-fluid my-3"
                             id="match3">
                         <h3 is="match3"></h3>
                         <p></p>
@@ -86,28 +86,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="col md 6 border">
+            <div class="col md 6 ">
                 <!--Section to be added-->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                    feugiat sem id lectus ultrices
-                    rutrum. Cras dapibus bibendum metus quis mattis. Suspendisse pellentesque posuere felis
-                    quam condimentum nec. Sed egestas venenatis odio sed hendrerit.</p>
+                <p></p>
             </div>
 
-            <div class="col md 6 border">
+            <div class="col md 6 ">
                 <!--Section to be added-->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                    feugiat sem id lectus ultrices
-                    rutrum. Cras dapibus bibendum metus quis mattis. Suspendisse pellentesque posuere felis
-                    quam condimentum nec. Sed egestas venenatis odio sed hendrerit.</p>
+                <p></p>
             </div>
         </div>
     </div>
    <!--Contact Form-->
-<div class="bg-faded py-5">
+<div class="bg-faded py-5" id="contact">
         <div class="container">
             <div class="row d-flex flex-column justify-items-center align-items-center">
-                <div class="col-md-6 text-center border">
+                <div class="col-md-6 text-center app-border">
                     <h1>Contact Us</h1>
                     <p>Having issues with your account?</p>
                     <p>Send us a message to get it fixed!</p>
@@ -124,10 +118,10 @@
     </div>
     </div>
     <!--Footer-->
-    <div class="footer">
+    <!-- <div class="footer">
         <div class="container d-flex flex-row justify-content-center">
             <h6>Jobster © 2018 - All Rights Reserved.</h6>
-        </div>
+        </div> -->
     </div>
 
 
@@ -142,8 +136,10 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/applicant.js"></script>
+    <script src="assets/js/applicant-profile.js"></script>
     <script src="assets/js/match.js"></script>
+    <script src="assets/js/image-upload.js"></script>
+
 </body>
 
 </html>
