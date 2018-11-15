@@ -1,14 +1,48 @@
 //Model for the mySQL Products database
 //Defines the structure (tables) of the database
 //Product is a child of Department.
-
+var bcrypt = require('bcryptjs');
 module.exports = function (connection, Sequelize) {
     var Applicant = connection.define('Applicant', {
 
-        //Define field names in table Applicant
+        username: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+
+        password: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        }
+        
+    },
+    { // encrypt before creating and saving user to database
+        hooks: {
+          beforeCreate: (user) => {
+            const salt = bcrypt.genSaltSync();
+            user.password = bcrypt.hashSync(user.password, salt);
+          }
+        }   
+    });
+/*
+    Applicant.associate = function(models) {
+        Applicant.hasMany(models.Message);
+    };
+*/
+    return Applicant;
+};
+
+
+/*
         firstName: {
             type: Sequelize.STRING,
-            // allowNull: false,
+            allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -16,7 +50,7 @@ module.exports = function (connection, Sequelize) {
 
         lastName: {
             type: Sequelize.STRING,
-            // allowNull: false,
+            allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -24,7 +58,7 @@ module.exports = function (connection, Sequelize) {
 
         email: {
             type: Sequelize.STRING,
-            // allowNull: false,
+            allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -32,7 +66,7 @@ module.exports = function (connection, Sequelize) {
 
         phone: {
             type: Sequelize.STRING,
-            // allowNull: false,
+            allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -40,7 +74,7 @@ module.exports = function (connection, Sequelize) {
 
         linkedIn: {
             type: Sequelize.STRING,
-            // allowNull: true,
+            allowNull: true,
             // validate: {
             //     notEmpty:true
             // }
@@ -48,7 +82,7 @@ module.exports = function (connection, Sequelize) {
 
         personalUrl: {
             type: Sequelize.STRING,
-            // allowNull: true,
+            allowNull: true,
             // validate: {
             //     notEmpty:true
             // }
@@ -56,7 +90,7 @@ module.exports = function (connection, Sequelize) {
 
         linkedIn: {
             type: Sequelize.STRING,
-            // allowNull: true,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -64,7 +98,7 @@ module.exports = function (connection, Sequelize) {
 
         personalUrl: {
             type: Sequelize.STRING,
-            // allowNull: true,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -72,7 +106,7 @@ module.exports = function (connection, Sequelize) {
 
         availability: {
             type: Sequelize.DATEONLY,
-            // allowNull: true,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -80,7 +114,7 @@ module.exports = function (connection, Sequelize) {
 
         zipcode: {
             type: Sequelize.STRING,
-            // allowNull: true,
+            allowNull: true,
             validate: {
                 notEmpty: true
             }
@@ -88,7 +122,7 @@ module.exports = function (connection, Sequelize) {
 
         salary: {
             type: Sequelize.FLOAT,
-            // allowNull: false,
+            allowNull: false,
             validate: {
                 notEmpty: true
             }
@@ -96,7 +130,7 @@ module.exports = function (connection, Sequelize) {
 
         videoUrl: {
             type: Sequelize.STRING,
-            // allowNull: true,
+            allowNull: true,
             // validate: {
             //     notEmpty:true
             // }
@@ -104,18 +138,9 @@ module.exports = function (connection, Sequelize) {
 
         jobtitle: {
             type: Sequelize.STRING,
-            // allowNull: false,
-            defaultValue: "undeclared-position",
+            allowNull: false,
             validate: {
                 notEmpty: true
             }
         }
-        
-    });
-
-    Applicant.associate = function(models) {
-        Applicant.hasMany(models.Message);
-    };
-
-    return Applicant;
-};
+        */

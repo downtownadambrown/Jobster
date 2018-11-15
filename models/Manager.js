@@ -1,12 +1,37 @@
 //Model for the mySQL Job database
 //Defines the structure (tables) of the database
 //Manager is a parent of Job
-
+var bcrypt = require('bcryptjs');
 module.exports = function(connection, Sequelize) {
     const Manager = connection.define('Manager', {
 
         //Define fields in Manager model
         //manager_id is defined automatically as id and will be used as a foreign key for Jobs.
+        username: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+
+        password: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        }
+/*
+        // "1&2&23..."
+        jobs: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        }
+/*
         firstName: {
             type: Sequelize.STRING,
             // allowNull: false,
@@ -48,14 +73,7 @@ module.exports = function(connection, Sequelize) {
                 notEmpty: true
             }
         },
-        password: {
-            type: Sequelize.STRING,
-            // allowNull: false,
-            validate: {
-                notEmpty: true,
-                isAlphanumeric: true
-            }
-        },
+
         companyName: {
             type: Sequelize.STRING,
             // allowNull: false,
@@ -85,12 +103,21 @@ module.exports = function(connection, Sequelize) {
                 notEmpty: true
             }
         }
+        */
+    },
+    { // encrypt before creating and saving user to database
+        hooks: {
+          beforeCreate: (user) => {
+            const salt = bcrypt.genSaltSync();
+            user.password = bcrypt.hashSync(user.password, salt);
+          }
+        }   
     });
 
     Manager.associate = function(models) {
         //Associate Manager with Job
         Manager.hasMany(models.Job);
-        Manager.hasMany(models.Message);
+        //Manager.hasMany(models.Message);
     };
 
     return Manager;

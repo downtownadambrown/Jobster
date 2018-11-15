@@ -6,7 +6,15 @@ module.exports = function(connection, Sequelize) {
     var Job = connection.define('Job', {
 
         //Define field names in table Job
-        position: {
+        title: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty:true
+            }
+        }
+/*
+        companyName: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
@@ -14,13 +22,46 @@ module.exports = function(connection, Sequelize) {
             }
         },
 
-        hourlyRate: {
+        compensationLow: {
             type: Sequelize.FLOAT,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
+
+        compensationHigh: {
+            type: Sequelize.FLOAT,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+
+        responsibilities1: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        responsibilities2: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        responsibilities3: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
 
         hours: {
             type: Sequelize.STRING,
@@ -29,7 +70,48 @@ module.exports = function(connection, Sequelize) {
                 notEmpty:true
             }
         },
+
+        logo_url: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            // validate: {
+            //     notEmpty:true
+            // }
+        },
+
         
+        keyword1: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        keyword2: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        keyword3: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
+        website: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            validate: {
+                notEmpty:true
+            }
+        },
+
         startDate: {
             type: Sequelize.DATEONLY,
             allowNull: true,
@@ -47,20 +129,18 @@ module.exports = function(connection, Sequelize) {
         }   
 
              
-
+*/
     });
 
-    
-Job.associate = function(models) {
-    //Job is a child of Manager, the tables are connected by id (Manager id)
-    Job.belongsTo(models.Manager, {
-        foreignKey: {
-            allowNull: false
-        },
-        //Commented out for now.
-        //Will delete all products in a department if the department is deleted.
-        //onDelete: 'cascade'
-    });
-};
+    Job.associate = function(models) {
+        //Job is a child of Manager, the tables are connected by id (Manager id)
+        Job.belongsTo(models.Manager, {
+            foreignKey: {
+                allowNull: false
+            },
+            onDelete: "cascade"
+        });
+    };
+
     return Job;
 };
