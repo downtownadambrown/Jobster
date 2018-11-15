@@ -36,18 +36,18 @@
     <!-- Includes an image/Video and what was fed into the page-->
     <div class="container top-spacer" id="profile">
         <div class="row">
-            <div class="col-lg-12 border">
+            <div class="col-lg-12 ">
                 <h2 class="h2-custom pt-3 pl-3"><strong class="titles">Profile</strong></h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 border">
-                <img class="float-left img-bio" id="manager-image" src="https://pingendo.com/assets/photos/user_placeholder.png" alt="profile photo"
-                    width="400px">
+            <div class="col-lg-6 ">
+                <input type="file" onchange="previewFile()"><br>
+                <img src="" height="600" alt="Image preview..."> 
             </div>
-            <div class="col-lg-6 border">
+            <div class="col-lg-6 app-border">
                 
-                    <!--append each of the applicants data here-->
+                    <!--append each of the manager data here-->
                     <!-- TODO: try to remove br tags -->
                    <b>First Name:</b> <div id="first-name"></div><br>
                    <b>Last Name:</b><div id="last-name"></div><br>
@@ -61,8 +61,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 border">
-                <h2 class="h2-custom pt-3 pl-3 "><strong>Active Job:</strong></h2>
+            <div class="col-md-4 app-border">
+                <h2 class="h2-custom pt-3 pl-3 "><strong class="titles">Active Position:</strong></h2>
                 
                         <!--append each of the job data here-->
                         <!-- TODO: try to remove br tags -->
@@ -73,27 +73,35 @@
                         <b>Area Zipcode:</b><div id="manager-job-zip"></div><br>
                     
             </div>
-            <div class="col-md-4 border">
-                <h2 class="h2-custom pt-3 pl-3"><strong>Active Job: </strong></h2>
-                        <b>Job Position:</b><div id="manager-job-position-2"></div><br>
-                        <b>Hourly Rate:</b><div id="manager-job-rate-2"></div><br>
-                        <b>Start Date:</b><div id="manager-job-start-2"></div><br>
-                        <b>Full-Time/Part-Time:</b><div id="manager-job-hours-2"></div><br>
-                        <b>Area Zipcode:</b><div id="manager-job-zip-2"></div><br>
+            <div class="col-md-4 app-border">
+                <h2 class="h2-custom pt-3 pl-3"><strong class="titles">Active Position: </strong></h2>
+                        <b>Job Position:</b><div id="manager-job-position-2"></div>
+                        Line Cook <br>
+                        <b>Hourly Rate:</b><div id="manager-job-rate-2"></div>
+                        8.75 <br>
+                        <b>Start Date:</b><div id="manager-job-start-2"></div>
+                        Thu Nov 29 2018 19:00:00 GMT-0500 (Eastern Standard Time)<br>
+                        <b>Full-Time/Part-Time:</b><div id="manager-job-hours-2"></div>
+                        Full-Time <br>
+                        <b>Area Zipcode:</b><div id="manager-job-zip-2"></div>
+                        72015
             </div>
-            <div class="col-md-4 border">
+            <div class="col-md-4 app-border" id="jobs">
                 <div class="col text-center text-light d-flex flex-column align-items-center justify-content-center" id="job-btn">
                     <p>Click to add or edit a job posting:</p>
                     <div id="button-container">
                         <button type="button" id="job-button" class="btn btn-danger m-3">Jobs</button>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+   
     <!--Carousel-->
     <div class="container">
         <div class="row">
+<<<<<<< HEAD
             <div class="col d-flex flex-row justify-content-center border">
 
                 <!-- Applicant Slideshow container -->
@@ -114,15 +122,37 @@
             
                 </div>
                 
+=======
+            <div class="col d-flex flex-row justify-content-center ">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner" id="carousel-append-location">
+                      <div class="carousel-item active">
+                        <img class="carouselImg" id="app-image" src="https://i.etsystatic.com/13662647/r/il/64ebbe/1363010095/il_570xN.1363010095_7n7f.jpg" alt="First slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="carouselImg" id="app-image" src="" alt="First slide">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only" id="app-forward">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only" id="app-backward">Next</span>
+                      
+                    </a>
+                  </div>
+>>>>>>> 11b68db102f6b1c36c968c08a8abadfe3ccaa90c
             </div>
         </div>
     </div>
     
  <!--Contact Form-->
 <div class="bg-faded py-5">
-        <div class="container">
+        <div class="container" id="contact">
             <div class="row d-flex flex-column justify-items-center align-items-center">
-                <div class="col-md-6 text-center border">
+                <div class="col-md-6 text-center app-border">
                     <h1>Contact Us</h1>
                     <p>Having issues with your account?</p>
                     <p>Send us a message to get it fixed!</p>
@@ -159,8 +189,8 @@
     <form id="adding-job-modal" class="modal">
         <h6 class="modal-break p-1 text-center">Create Your Job to Find Hires!</h6>
         <div class="form-group form-inline p-1">
-            <label for="exampleFormControlSelect1" class="mr-auto" id="job-position">Position you are looking for</label>
-            <select class="form-control" id="app-title">
+            <label for="exampleFormControlSelect1" class="mr-auto">Position you are looking for</label>
+            <select class="form-control" id="job-position">
                 <option>Waiter</option>
                 <option>Host</option>
                 <option>Busser</option>
@@ -174,24 +204,24 @@
             </select>
         </div>
         <div class="form-group form-inline p-1">
-            <label for="exampleFormControlInput1" class="mr-auto" id="job-rate">Hourly Rate</label>
-            <input type="number" class="form-control" id="app-rate" placeholder="$">
+            <label for="exampleFormControlInput1" class="mr-auto" >Hourly Rate</label>
+            <input type="number" class="form-control" id="job-rate" placeholder="$">
         </div>
         <div class="form-group fomr-inline p-1">
-            <label for="exampleFormControlInput1" class="mr-auto" id="job-start">Start Date</label>
-            <input type="date" class="form-control" id="comp-start" placeholder="mm/dd/yyyy" required>
+            <label for="exampleFormControlInput1" class="mr-auto">Start Date</label>
+            <input type="date" class="form-control" id="job-start" placeholder="mm/dd/yyyy" required>
         </div>
         <div class="form-group form-inline p-1">
-            <label for="exampleFormControlSelect1" class="mr-auto" id="job-hours">Full-Time / Part-Time</label>
-            <select class="form-control" id="app-title">
+            <label for="exampleFormControlSelect1" class="mr-auto" >Full-Time / Part-Time</label>
+            <select class="form-control" id="job-hours">
                 <option>Full-Time</option>
                 <option>Part-Time</option>
             </select>
         </div>
 
         <div class="form-group form-inline p-1">
-            <label for="exampleFormControlInput1" class="mr-auto" id="job-zip">Location Zip Code</label>
-            <input type="text" class="form-control" id="app-zip" placeholder="Zip Code">
+            <label for="exampleFormControlInput1" class="mr-auto" >Location Zip Code</label>
+            <input type="text" class="form-control" id="job-zip" placeholder="Zip Code">
         </div>
 
         <div class="d-flex flex-row">
@@ -208,7 +238,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/manager-profile.js"></script>
+<<<<<<< HEAD
     <script src="assets/js/match.js"></script>
+=======
+    <!-- <script src="assets/js/match.js"></script> -->
+    <script src="assets/js/image-upload.js"></script>
+>>>>>>> 11b68db102f6b1c36c968c08a8abadfe3ccaa90c
 </body>
 
 </html>
