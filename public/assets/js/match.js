@@ -34,18 +34,9 @@ $(function () {
             console.log("displayApplicants", appMatches, i);
             console.log("index, appMatches.length", index, appMatches.length);
 
-            //Wrap around carousel scroll
-            if (i === (appMatches.length)) {
-                console.log("reset");
-                i = 0;
-            } else if (i < 0) {
-                console.log("reset left");
-                i = appMatches.length;
-                console.log("index", i);
-            };
-
             //Clear applicant data from display
             $('#app-image').empty();
+            $('#app-name').empty();
             $('#app-forward').empty();
             $('#app-backward').empty();
             $('#app-no').empty();
@@ -54,11 +45,12 @@ $(function () {
 
             //Create HTML holders
             const newApplicant = $('<img>').attr("src", `${appMatches[i].videoUrl}`)
+            const nameApplicant = $('<p></p>');
             const yesApplicant = $('<button>');
             const noApplicant = $('<button>');
-            const forApplicant = $('<button>');
-            const backApplicant = $('<button>');
-            const heartApplicant = $('<h3>heart</h3>'); //Favorite indication
+            const forApplicant = $('<p>&#10095;</p>');
+            const backApplicant = $('<p>&#10094;</p>');
+            const heartApplicant = $('<h3>&#10084;</h3>'); //Favorite indication
 
             // Add a data-attributes to attach to selectors
             // TODO - some are not needed.
@@ -69,11 +61,11 @@ $(function () {
             backApplicant.attr('appBack-id', i);
 
             //Add text to diplay on button
-            //TODO for testing
-            yesApplicant.text(`${i}  ${appMatches[i].id} yes ${appMatches[i].firstName}`);
-            noApplicant.text(`${i}  ${appMatches[i].id} no ${appMatches[i].firstName}`);
-            forApplicant.text(`${i}  ${appMatches[i].id} for ${appMatches[i].firstName}`);
-            backApplicant.text(`${i}  ${appMatches[i].id} back ${appMatches[i].firstName}`);
+            yesApplicant.text('Keep');
+            noApplicant.text('Toss');
+            // forApplicant.text(`${i}  ${appMatches[i].id} for ${appMatches[i].firstName}`);
+            // backApplicant.text(`${i}  ${appMatches[i].id} back ${appMatches[i].firstName}`);
+            nameApplicant.text(`${appMatches[i].firstName} ${appMatches[i].lastName}`);
 
             //Display to the User       
             $('#app-image').append(newApplicant);
@@ -81,6 +73,8 @@ $(function () {
             $('#app-backward').append(backApplicant);
             $('#app-no').append(noApplicant);
             $('#app-yes').append(yesApplicant);
+            $('#app-name').append(nameApplicant);
+            
 
 
             //Display favorite heart if id is found in favorites array
@@ -152,6 +146,13 @@ $(function () {
             console.log("scrollBack");
             index = index - 1;
 
+                if (index < 0) {
+                    console.log("reset left");
+                    index = appMatches.length-1;
+                    console.log("index", index);
+                };
+            
+
             //Render applicants
             displayApplicants(appMatches, index);
 
@@ -161,6 +162,14 @@ $(function () {
             event.preventDefault();
             console.log("scrollForward");
             index = index + 1;
+
+            //Wrap around carousel scroll
+            if (index === (appMatches.length)) {
+                console.log("reset");
+                console.log("index", index)
+                index = 0;
+            };
+            
 
             //Render applicants
             displayApplicants(appMatches, index);
