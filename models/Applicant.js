@@ -71,6 +71,12 @@ module.exports = function (connection, Sequelize) {
                 notEmpty: true
             }
         },
+        password: {
+            type: Sequelize.STRING,
+            validate: {
+                notEmpty: true
+            }
+        },
 
         linkedIn: {
             type: Sequelize.STRING,
@@ -102,11 +108,21 @@ module.exports = function (connection, Sequelize) {
             validate: {
                 notEmpty: true
             }
+        },
+        
+        videoUrl: {
+            type: Sequelize.STRING,
+            // allowNull: true,
+            // validate: {
+            //     notEmpty:true
+            // }
         },
 
         availability: {
-            type: Sequelize.DATEONLY,
-            allowNull: true,
+
+            type: Sequelize.DATE ,
+            // allowNull: true,
+
             validate: {
                 notEmpty: true
             }
@@ -128,13 +144,7 @@ module.exports = function (connection, Sequelize) {
             }
         },
 
-        videoUrl: {
-            type: Sequelize.STRING,
-            allowNull: true,
-            // validate: {
-            //     notEmpty:true
-            // }
-        },
+
 
         jobtitle: {
             type: Sequelize.STRING,

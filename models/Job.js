@@ -113,7 +113,7 @@ module.exports = function(connection, Sequelize) {
         },
 
         startDate: {
-            type: Sequelize.DATEONLY,
+            type: Sequelize.DATE,
             allowNull: true,
             validate: {
                 notEmpty:true
@@ -131,6 +131,7 @@ module.exports = function(connection, Sequelize) {
              
 */
     });
+
 
     Job.associate = function(models) {
         //Job is a child of Manager, the tables are connected by id (Manager id)
