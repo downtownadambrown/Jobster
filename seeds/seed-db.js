@@ -124,7 +124,9 @@ db.sequelize.sync({ force: true }).then(function () {
     })
   }).then(function (data) {
     console.log('Data successfully added!');
+    db.close();
   }).catch(function (error) {
     console.log('Error', error)
+    db.close()
   })
 });
