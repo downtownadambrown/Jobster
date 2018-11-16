@@ -1,11 +1,12 @@
 {
     "development": {
       "username": "root",
-      "password": "root",
+      "password": "kikeyPass",
       "database": "jobster_db",
       "host": "127.0.0.1",
       "port": 3306,
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "secretKey": "clandestineKey"
     },
     "test": {
       "username": "root",
@@ -13,7 +14,8 @@
       "database": "database_test",
       "host": "127.0.0.1",
       "port": 3306,
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "secretKey": "clandestineKey"
     },
     "production": {
       "username": "wesa79v3e3yk2yku",
@@ -21,7 +23,8 @@
       "database": "myvtd0hq1nmqyinr",
       "host": "etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "port": 3306,
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "secretKey": "clandestineKey"
     }
   }
   

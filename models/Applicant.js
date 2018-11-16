@@ -1,9 +1,25 @@
 //Model for the mySQL Products database
 //Defines the structure (tables) of the database
 //Product is a child of Department.
-
+const bcrypt = require('bcryptjs'); 
 module.exports = function (connection, Sequelize) {
     var Applicant = connection.define('Applicant', {
+
+        username: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+
+        password: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
 
         //Define field names in table Applicant
         firstName: {
@@ -33,12 +49,6 @@ module.exports = function (connection, Sequelize) {
         phone: {
             type: Sequelize.STRING,
             // allowNull: false,
-            validate: {
-                notEmpty: true
-            }
-        },
-        password: {
-            type: Sequelize.STRING,
             validate: {
                 notEmpty: true
             }
@@ -119,11 +129,16 @@ module.exports = function (connection, Sequelize) {
             }
         }
         
-    });
+    },
 
-    Applicant.associate = function(models) {
-        Applicant.hasMany(models.Message);
-    };
+    { // encrypt before creating and saving user to database
+        hooks: {
+          beforeCreate: (user) => {
+            const salt = bcrypt.genSaltSync();
+            user.password = bcrypt.hashSync(user.password, salt);
+          }
+        }   
+    });
 
     return Applicant;
 };
