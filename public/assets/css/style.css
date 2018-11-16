@@ -94,6 +94,9 @@ a {
     border: 6px solid black;
     border-radius: 32px;
 }
+.mr-auto {
+    color: black;
+}
 
 
 .top-spacer {
