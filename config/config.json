@@ -18,7 +18,7 @@
       "secretKey": "clandestineKey"
     },
     "production": {
-      "use_env_variable":"JAWS_DB_URL"
+      "use_env_variable":"JAWS_DB_URL",
       "username": "wesa79v3e3yk2yku",
       "password": "edvgo3gio5fs4gbh",
       "database": "myvtd0hq1nmqyinr",
