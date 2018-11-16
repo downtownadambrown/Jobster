@@ -132,3 +132,84 @@ a {
         justify-content: center;
     }
 }
+/* Applicant Slides */
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 600px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    height: 30% 
+    
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color:orange;
+  font-size: 48px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* heart favorite */
+.heart {
+  color: red;
+  font-size: 48px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Keep applicant */
+.yes {
+    /* color: red; */
+    font-size: 24px;
+    padding: 12px 12px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Discard applicant */
+.no {
+    /* color: red; */
+    font-size: 24px;
+    padding: 12px 12px;
+    position: absolute;
+    bottom: 0;
+}

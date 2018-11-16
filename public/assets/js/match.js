@@ -1,10 +1,9 @@
 $(function () {
 
-    //CONSOLE LOG STILL PRESENT FOR FINAL TESTING
+    //FUNCTIONS
 
     //Grab the applicants that match the job requirements
-    //TEMPORARY just grab the applicants
-    const matchingQuery = function (jobData) {
+        const matchingQuery = function (jobData) {
         console.log("matchingQuery");
 
         $.get('/api/applicant')
@@ -19,10 +18,9 @@ $(function () {
     };
 
 
-    //Now that we have the applicant data, we can work with it.
+    //Now that we have the applicant data:
     //appMatches is all of the applicants that are qualified for the job
     const dataReady = function (appMatches) {
-
 
 
         //Display chosen applicants to the User +
@@ -31,21 +29,9 @@ $(function () {
         //i is the index of appMatches data
         const displayApplicants = function (appMatches, i) {
 
-            console.log("displayApplicants", appMatches, i);
-            console.log("index, appMatches.length", index, appMatches.length);
-
-            //Wrap around carousel scroll
-            if (i === (appMatches.length)) {
-                console.log("reset");
-                i = 0;
-            } else if (i < 0) {
-                console.log("reset left");
-                i = appMatches.length;
-                console.log("index", i);
-            };
-
             //Clear applicant data from display
             $('#app-image').empty();
+            $('#app-name').empty();
             $('#app-forward').empty();
             $('#app-backward').empty();
             $('#app-no').empty();
@@ -54,26 +40,24 @@ $(function () {
 
             //Create HTML holders
             const newApplicant = $('<img>').attr("src", `${appMatches[i].videoUrl}`)
+            const nameApplicant = $('<p></p>');
             const yesApplicant = $('<button>');
             const noApplicant = $('<button>');
-            const forApplicant = $('<button>');
-            const backApplicant = $('<button>');
-            const heartApplicant = $('<h3>heart</h3>'); //Favorite indication
+            const forApplicant = $('<p>&#10095;</p>');
+            const backApplicant = $('<p>&#10094;</p>');
+            const heartApplicant = $('<h3>&#10084;</h3>'); //Favorite indication
 
             // Add a data-attributes to attach to selectors
-            // TODO - some are not needed.
             newApplicant.attr('app-id', i);
             yesApplicant.attr('appYes-id', i);
             noApplicant.attr('appNo-id', i);
             forApplicant.attr('appFor-id', i);
             backApplicant.attr('appBack-id', i);
 
-            //Add text to diplay on button
-            //TODO for testing
-            yesApplicant.text(`${i}  ${appMatches[i].id} yes ${appMatches[i].firstName}`);
-            noApplicant.text(`${i}  ${appMatches[i].id} no ${appMatches[i].firstName}`);
-            forApplicant.text(`${i}  ${appMatches[i].id} for ${appMatches[i].firstName}`);
-            backApplicant.text(`${i}  ${appMatches[i].id} back ${appMatches[i].firstName}`);
+            //Add text to diplay elements
+            yesApplicant.text('Keep');
+            noApplicant.text('Toss');            
+            nameApplicant.text(`${appMatches[i].firstName} ${appMatches[i].lastName}`);
 
             //Display to the User       
             $('#app-image').append(newApplicant);
@@ -81,13 +65,13 @@ $(function () {
             $('#app-backward').append(backApplicant);
             $('#app-no').append(noApplicant);
             $('#app-yes').append(yesApplicant);
+            $('#app-name').append(nameApplicant);
+            
 
 
             //Display favorite heart if id is found in favorites array
-            for (let j = 0; j < favArray.length; j++) {
-                console.log("favArray.indexOf(appMatches[i].id", favArray.indexOf(appMatches[i].id));
-                if (favArray.indexOf(appMatches[i].id) != -1) {
-                    console.log("no heart");
+            for (let j = 0; j < favArray.length; j++) {                
+                if (favArray.indexOf(appMatches[i].id) != -1) {                    
                     $('#app-heart').append(heartApplicant); //Display heart
                 };
             };
@@ -97,10 +81,7 @@ $(function () {
 
         //Manager can choose to discard an applicant
         const noApplicant = function (event) {
-            event.preventDefault();
-
-            console.log("NoApplicant");
-            console.log("appMatches before", appMatches);
+            event.preventDefault();            
 
             //Capture the index of the applicant to remove.
             const appNoId = ($(this).find("button").attr("appNo-id"));
@@ -108,24 +89,14 @@ $(function () {
             removed.push(appMatches.splice(appNoId, 1));
             // remArray.push(removed.Array[appNoId].id);
             remArray.push(appMatches[appNoId].id);
-
-
-            console.log("appNoId, index", appNoId, index);
-            console.log("removed", removed);
-            console.log("remArray", remArray);
-            console.log("appMatches after", appMatches);
-
+            
             //Render applicants
-            displayApplicants(appMatches, index);           
-
+            displayApplicants(appMatches, index);
         };
 
         //Manager can choose to favorite an applicant
         const yesApplicant = function (event) {
             event.preventDefault();
-
-            console.log("yesApplicant");
-            console.log("appMatches before", appMatches);
 
             //Capture the index of the applicant to favorite.
             const appYesId = ($(this).find("button").attr("appYes-id"));
@@ -133,40 +104,41 @@ $(function () {
             favorite.push(appMatches[appYesId]);
             favArray.push(appMatches[appYesId].id);
 
-
-            console.log("appYesId, index", appYesId, index);
-            console.log("favorite", favorite);
-            console.log("favArray", favArray);
-            console.log("appMatches after", appMatches);
-
             //Render applicants
             displayApplicants(appMatches, index);
-
         };
 
 
 
-        //User can scroll back and forward through applicants
+        //User can scroll back through applicants
         const scrollBack = function (event) {
-            event.preventDefault();
-            console.log("scrollBack");
+            event.preventDefault();            
             index = index - 1;
 
+                if (index < 0) {                    
+                    index = appMatches.length-1;                    
+                };            
+
             //Render applicants
             displayApplicants(appMatches, index);
-
         };
 
+        //User can scroll forward through applicants
         const scrollForward = function (event) {
-            event.preventDefault();
-            console.log("scrollForward");
+            event.preventDefault();            
             index = index + 1;
 
+            //Wrap around carousel scroll
+            if (index === (appMatches.length)) {                
+                index = 0;
+            };            
+
             //Render applicants
             displayApplicants(appMatches, index);
         };
 
-       
+
+        //Render the applicants carousel
         displayApplicants(appMatches, 0);
 
         //On click call scroll and remove/favorite.
