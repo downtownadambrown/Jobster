@@ -6,7 +6,7 @@ $(function () {
         const matchingQuery = function (jobData) {
         console.log("matchingQuery");
 
-        $.get('/api/applicant')
+        $.get('/api/findall/applicant')
             // $.get('/api/applicant/match')
             .then(function (appMatches) {
                 console.log("Query matching data", appMatches);
