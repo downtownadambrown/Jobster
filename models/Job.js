@@ -6,6 +6,14 @@ module.exports = function(connection, Sequelize) {
     var Job = connection.define('Job', {
 
         //Define field names in table Job
+        title: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty:true
+            }
+        },
+        
         position: {
             type: Sequelize.STRING,
             allowNull: false,

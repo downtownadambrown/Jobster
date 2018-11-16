@@ -14,6 +14,10 @@ const PORT = process.env.PORT || 8080;
 //Require our models for syncing
 const db = require('./models');
 
+//Set key for JWT, currently put into development.secretKey, need to update this part when deploy
+const config = require(__dirname + "/config/config.json");
+app.set("secretKey", config.development.secretKey);
+
 //Sets up middleware for Express app to handle data parsing
     //Parse application/x-www-form-urlencoded
     app.use(express.urlencoded({ extended: true }));
@@ -23,10 +27,8 @@ const db = require('./models');
     app.use(express.static(path.join(__dirname,'public')));
 
 //Routes
-    
-    
+
     require('./routes/api-routes.js')(app);
-    
     require('./routes/html-routes')(app);
         
 //Sync our sequelize models then start our Express app, listen to PORT
